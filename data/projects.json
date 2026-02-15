@@ -1,0 +1,18 @@
+{
+  "projects": [
+    {
+      "id": "maison-contemporaine",
+      "title": "Maison Contemporaine",
+      "context": "Résidentiel",
+      "year": "2024",
+      "shortDescription": "Résidence familiale alliant design moderne et respect de l'environnement naturel.",
+      "thumbnail": "images/projects/maison-contemporaine/thumb.png",
+      "images": [
+        "images/projects/maison-contemporaine/image1.png",
+        "images/projects/maison-contemporaine/image2.png",
+        "images/projects/maison-contemporaine/image3.png"
+      ],
+      "longDescription": "<p>Ce projet de maison contemporaine illustre parfaitement l'harmonie entre architecture moderne et intégration paysagère. Située sur un terrain en pente douce, la maison se déploie sur deux niveaux avec de larges ouvertures orientées vers le sud.</p><p>Les matériaux choisis - béton brut, verre et bois naturel - créent un dialogue entre force et légèreté. Les espaces intérieurs fluides favorisent la circulation de la lumière naturelle tout au long de la journée.</p><p>L'accent a été mis sur la durabilité avec l'intégration de panneaux solaires, d'une isolation renforcée et d'un système de récupération des eaux pluviales.</p>"
+    }
+  ]
+}

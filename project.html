@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Projet - Portfolio Architecture</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">← Retour</a>
+            <div class="nav-links">
+                <a href="index.html#projets" class="nav-link">Projets</a>
+                <a href="index.html#about" class="nav-link">À propos</a>
+                <a href="index.html#cv" class="nav-link">CV</a>
+                <a href="index.html#contact" class="nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Project Hero -->
+    <div class="project-hero">
+        <div class="container">
+            <div class="project-meta">
+                <span id="project-context" class="project-context"></span>
+                <span class="project-divider">•</span>
+                <span id="project-year" class="project-year"></span>
+            </div>
+            <h1 id="project-title" class="project-title"></h1>
+            <p id="project-subtitle" class="project-subtitle"></p>
+        </div>
+    </div>
+
+    <!-- Project Content -->
+    <div class="project-content">
+        <div class="container">
+            <!-- Description courte -->
+            <div class="project-section">
+                <h2 class="project-section-title">Présentation</h2>
+                <p id="project-description" class="project-description"></p>
+            </div>
+
+            <!-- Galerie d'images -->
+            <div class="project-section">
+                <div id="project-gallery" class="project-gallery">
+                    <!-- Les images seront chargées dynamiquement -->
+                </div>
+            </div>
+
+            <!-- Description longue -->
+            <div class="project-section">
+                <h2 class="project-section-title">Détails du projet</h2>
+                <div id="project-long-description" class="project-long-description"></div>
+            </div>
+
+            <!-- Navigation vers autres projets -->
+            <div class="project-navigation">
+                <a href="index.html#projets" class="btn-secondary">Voir tous les projets</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Portfolio Architecture. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="js/project.js"></script>
+</body>
+</html>
