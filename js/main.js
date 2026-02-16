@@ -322,8 +322,9 @@ function displayProjects(projects) {
 
 function createProjectCard(project, index) {
     const card = document.createElement('article');
-    card.className = 'project-card fade-in';
-    card.style.transitionDelay = `${index * 0.05}s`;
+    // Suppression de l'animation d'apparition ('fade-in')
+    card.className = 'project-card';
+    // card.style.transitionDelay removed
     card.dataset.projectId = project.id;
 
     // Image
@@ -436,15 +437,17 @@ function createProjectPanel(project) {
     const content = document.createElement('div');
     content.className = 'project-detail-content';
 
-    // Bouton fermer
+    // Bouton retour (flèche)
     const closeBtn = document.createElement('button');
     closeBtn.className = 'project-detail-close';
-    closeBtn.innerHTML = '×';
+    closeBtn.innerHTML = '↩';
     closeBtn.setAttribute('aria-label', 'Fermer');
     closeBtn.addEventListener('click', (e) => {
         e.stopPropagation();
         closeProjectPanel();
     });
+
+    panel.appendChild(closeBtn);
 
     // Header
     const header = document.createElement('div');
@@ -493,12 +496,13 @@ function createProjectPanel(project) {
     });
 
     // Description longue
+    // Authenticate
+    // description longue
     const longDesc = document.createElement('div');
     longDesc.className = 'project-detail-long';
     longDesc.innerHTML = project.longDescription;
 
     // Assemblage
-    content.appendChild(closeBtn);
     content.appendChild(header);
     content.appendChild(gallery);
     content.appendChild(longDesc);
@@ -770,6 +774,43 @@ function initStickyNav() {
 }
 
 // ==========================================
+// MENU MOBILE
+// ==========================================
+
+function initMobileMenu() {
+    const burger = document.querySelector('.nav-burger');
+    const links = document.querySelector('.nav-links');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    if (!burger || !links) return;
+
+    // Toggle menu
+    burger.addEventListener('click', () => {
+        const isExpanded = burger.getAttribute('aria-expanded') === 'true';
+        burger.setAttribute('aria-expanded', !isExpanded);
+        burger.classList.toggle('active');
+        links.classList.toggle('active');
+
+        // Bloquer le scroll quand le menu est ouvert
+        if (!isExpanded) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
+    });
+
+    // Fermer le menu au clic sur un lien
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            burger.setAttribute('aria-expanded', 'false');
+            burger.classList.remove('active');
+            links.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    });
+}
+
+// ==========================================
 // INITIALISATION
 // ==========================================
 
@@ -778,5 +819,6 @@ document.addEventListener('DOMContentLoaded', () => {
     loadCV();
     initSmoothScroll();
     initStickyNav();
+    initMobileMenu();
     observeElements();
 });
