@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,13 +8,28 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Work+Sans:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
-    <!-- Navigation -->
-    <nav class="nav">
+    <!-- Hero -->
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-name">Jules Manucci Lasnon</h1>
+            <p class="hero-subtitle">Architecte DE</p>
+        </div>
+        <a href="#projets" class="hero-scroll" aria-label="Défiler vers le bas">
+            <span class="hero-scroll-text">Découvrir</span>
+            <span class="hero-scroll-arrow">↓</span>
+        </a>
+    </section>
+
+    <!-- Navigation (hidden initially, appears on scroll) -->
+    <nav class="nav nav-hidden">
         <div class="nav-container">
-            <a href="#" class="nav-logo">Jules Manucci Lasnon - Architecte DE</a>
+            <a href="#hero" class="nav-logo">Jules Manucci Lasnon — Architecte DE</a>
             <div class="nav-links">
                 <a href="#projets" class="nav-link">Projets</a>
                 <a href="#about" class="nav-link">Qui suis-je ?</a>
@@ -27,7 +43,7 @@
     <section id="projets" class="section section-projects">
         <div class="container">
             <div class="section-header">
-                <span class="section-number">01</span>
+                <span class="section-number"></span>
                 <h2 class="section-title">Projets</h2>
             </div>
             <div id="projects-grid" class="projects-grid">
@@ -40,26 +56,35 @@
     <section id="about" class="section section-about">
         <div class="container">
             <div class="section-header">
-                <span class="section-number">02</span>
+                <span class="section-number"></span>
                 <h2 class="section-title">Qui suis-je ?</h2>
             </div>
             <div class="about-content">
                 <div class="about-text">
                     <p>
-                        Issu d'une famille de maçons, j'ai grandi sur les chantiers et dans la forêt à bâtir des cabanes. Curieux infatigable, j'ai plus tard voyagé des années durant, étudiant les façons dont l'humanité habite le monde et résout ses problèmes.
+                        Issu d'une famille de maçons, j'ai grandi sur les chantiers et dans la forêt à bâtir des
+                        cabanes. Curieux infatigable, j'ai plus tard voyagé des années durant, étudiant les façons dont
+                        l'humanité habite le monde et résout ses problèmes.
                     </p>
                     <p>
-                        En attendant d'être habilité, j'exerce en tant qu'auto-entrepreneur et propose des prestations de conception architecturale non réglementées à destination de particuliers, d'associations, d'architectes et autres professionnels du bâtiment :
+                        En attendant d'être habilité, j'exerce en tant qu'auto-entrepreneur et propose des prestations
+                        de conception architecturale non réglementées à destination de particuliers, d'associations,
+                        d'architectes et autres professionnels du bâtiment :
                     </p>
                     <p>
-                        Relevé de l'existant, esquisses d'aménagement, études de faisabilité, modélisation 3D, DAO, photogrammétrie, ainsi que l'audit de déconstruction et le diagnostic de réemploi des matériaux.
+                        Relevé de l'existant, esquisses d'aménagement, études de faisabilité, modélisation 3D, DAO,
+                        photogrammétrie, ainsi que l'audit de déconstruction et le diagnostic de réemploi des matériaux.
                     </p>
                     <p>
-                        Afin de poursuivre ma professionnalisation et contribuer activement à des projets exigeants, je suis particulièrement motivé à l'idée de collaborer avec un(e) architecte inscrit(e) à l'Ordre, susceptible de m'accompagner dans l'obtention de l'Habilitation à la Maîtrise d'œuvre en Nom Propre (HMONP).
+                        Afin de poursuivre ma professionnalisation et contribuer activement à des projets exigeants, je
+                        suis particulièrement motivé à l'idée de collaborer avec un(e) architecte inscrit(e) à l'Ordre,
+                        susceptible de m'accompagner dans l'obtention de l'Habilitation à la Maîtrise d'œuvre en Nom
+                        Propre (HMONP).
                     </p>
                 </div>
                 <div class="about-image">
-                    <img src="images/profile/photo.png" alt="Jules Manucci-Lasnon" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22500%22%3E%3Crect fill=%22%23e5e5e5%22 width=%22400%22 height=%22500%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23999%22 font-family=%22sans-serif%22 font-size=%2224%22%3EJules Manucci-Lasnon%3C/text%3E%3C/svg%3E'">
+                    <img src="images/profile/photo.png" alt="Jules Manucci-Lasnon"
+                        onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22500%22%3E%3Crect fill=%22%23e5e5e5%22 width=%22400%22 height=%22500%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23999%22 font-family=%22sans-serif%22 font-size=%2224%22%3EJules Manucci-Lasnon%3C/text%3E%3C/svg%3E'">
                 </div>
             </div>
         </div>
@@ -69,13 +94,13 @@
     <section id="cv" class="section section-cv">
         <div class="container">
             <div class="section-header">
-                <span class="section-number">03</span>
+                <span class="section-number"></span>
                 <h2 class="section-title">CV</h2>
             </div>
-            
+
             <!-- Info personnelle -->
             <div id="cv-info-perso" class="cv-info-perso"></div>
-            
+
             <!-- Grid pour Expériences et Formation -->
             <div class="cv-main-grid">
                 <!-- Expériences -->
@@ -83,14 +108,14 @@
                     <h3 class="cv-category">Expérience Professionnelle</h3>
                     <div id="cv-experiences" class="cv-list"></div>
                 </div>
-                
+
                 <!-- Formation -->
                 <div class="cv-column">
                     <h3 class="cv-category">Formation</h3>
                     <div id="cv-formations" class="cv-list"></div>
                 </div>
             </div>
-            
+
             <!-- Grid pour Compétences -->
             <div class="cv-skills-grid">
                 <!-- Logiciels avec jauges -->
@@ -98,14 +123,14 @@
                     <h3 class="cv-category">Logiciels & Compétences Techniques</h3>
                     <div id="cv-logiciels" class="cv-skills-list"></div>
                 </div>
-                
+
                 <!-- Langues et Intérêts -->
                 <div class="cv-secondary-grid">
                     <div class="cv-column-small">
                         <h3 class="cv-category-small">Langues</h3>
                         <div id="cv-langues" class="cv-langues-list"></div>
                     </div>
-                    
+
                     <div class="cv-column-small">
                         <h3 class="cv-category-small">Centres d'Intérêt</h3>
                         <div id="cv-interets" class="cv-interets-list"></div>
@@ -119,7 +144,7 @@
     <section id="contact" class="section section-contact">
         <div class="container">
             <div class="section-header">
-                <span class="section-number">04</span>
+                <span class="section-number"></span>
                 <h2 class="section-title">Contactez moi</h2>
             </div>
             <div class="contact-content">
@@ -146,4 +171,5 @@
 
     <script src="js/main.js"></script>
 </body>
+
 </html>

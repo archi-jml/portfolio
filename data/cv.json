@@ -3,8 +3,7 @@
     "nom": "Jules Manucci-Lasnon",
     "date_naissance": "17 août 1997",
     "lieu_naissance": "Ventavon (05)",
-    "vehicule": true,
-    "equipement": "Poste de travail portable et licences logicielles personnelles"
+    "equipement": ""
   },
   "experiences": [
     {
@@ -12,49 +11,60 @@
       "poste": "Architecte Freelance",
       "entreprise": "",
       "lieu": "",
-      "description": "Projets variés en indépendant"
+      "description": "Projets variés en indépendant",
+      "taches": [
+        "Relevé de l'existant",
+        "Modélisation 3D",
+        "Suivi de chantier"
+      ]
     },
     {
       "periode": "Janvier 2024 - Présent",
-      "poste": "Assistance Maîtrise d'Ouvrage",
+      "poste": "Assistant à laMaîtrise d'Ouvrage",
       "entreprise": "Vipassana France",
       "lieu": "Dhamma Mahi, Yonne",
-      "description": ""
+      "description": "",
+      "taches": []
     },
     {
       "periode": "Mars - Décembre 2024",
-      "poste": "Stage - Architecte",
+      "poste": "",
       "entreprise": "TOA Architectes Associés",
       "lieu": "Paris - Grenoble",
-      "description": "Sous la direction de Pascal Thomas. Analyse, esquisse, coordination"
+      "description": "Sous la direction de Pascal Thomas. Analyse, esquisse, coordination",
+      "taches": []
     },
     {
       "periode": "Février - Avril 2022",
       "poste": "Stage - Architecture Humanitaire",
       "entreprise": "Heritage Foundation of Pakistan",
       "lieu": "Karachi, Pakistan",
-      "description": "Sous la direction de Yasmeen Lari. Architecture humanitaire, woman-empowerment, 0 carbone, préservation du patrimoine"
+      "description": "Sous la direction de Yasmeen Lari. Architecture humanitaire, woman-empowerment, 0 carbone, préservation du patrimoine",
+      "taches": []
     },
     {
       "periode": "Septembre 2018 - Juillet 2021",
       "poste": "Stage - Architecte",
       "entreprise": "Nizar Hadad Architecte",
       "lieu": "Baskinta, Liban",
-      "description": "Projet \"LifeHaus\" : Chantier du prototype de maison semi-enterrée inspirée des Earthships"
+      "description": "Projet \"LifeHaus\" : Chantier du prototype de maison semi-enterrée inspirée des Earthships",
+      "taches": []
     },
     {
       "periode": "Mars - Mai 2017",
       "poste": "Stage",
       "entreprise": "SARL Les Logis de Provence",
       "lieu": "Sisteron, Hautes-Alpes",
-      "description": "Gestion administrative et financière, suivi de chantier"
+      "description": "Gestion administrative et financière, suivi de chantier",
+      "taches": []
     },
     {
       "periode": "2015 - Présent",
       "poste": "Expériences Diverses sur Chantier",
       "entreprise": "",
       "lieu": "",
-      "description": "Participation à différents projets, petit et gros œuvre, éco-construction"
+      "description": "Participation à différents projets, petit et gros œuvre, éco-construction",
+      "taches": []
     }
   ],
   "formations": [
@@ -63,49 +73,56 @@
       "diplome": "Diplôme d'État d'Architecte",
       "etablissement": "ENSA Grenoble",
       "mention": "Mention Très Bien",
-      "details": "Cycle de master"
+      "details": "Cycle de master",
+      "taches": []
     },
     {
       "periode": "Juillet 2020 - Mai 2023",
       "diplome": "Voyage d'Études",
       "etablissement": "",
       "mention": "",
-      "details": "Italie, Croatie, Bulgarie, Géorgie, Turquie, Arménie, Iran, Pakistan, Inde, Nepal, Sri Lanka"
+      "details": "Italie, Croatie, Bulgarie, Géorgie, Turquie, Arménie, Iran, Pakistan, Inde, Nepal, Sri Lanka",
+      "taches": []
     },
     {
       "periode": "2020 - 2021",
       "diplome": "Diplôme d'Études en Architecture",
       "etablissement": "Beaux-Arts, Istanbul (MSGSU)",
       "mention": "",
-      "details": "Cycle de licence"
+      "details": "Cycle de licence",
+      "taches": []
     },
     {
       "periode": "2018 - 2020",
       "diplome": "Licence en Architecture",
       "etablissement": "ENSA Grenoble",
       "mention": "",
-      "details": ""
+      "details": "",
+      "taches": []
     },
     {
       "periode": "Juillet 2017 - Mai 2018",
       "diplome": "Voyage d'Études",
       "etablissement": "",
       "mention": "",
-      "details": "Canada, Guatemala, Belize, Mexique, Cuba, Colombie, Équateur"
+      "details": "Canada, Guatemala, Belize, Mexique, Cuba, Colombie, Équateur",
+      "taches": []
     },
     {
       "periode": "Septembre 2015 - Juillet 2017",
       "diplome": "DUT Gestion des Entreprises et des Administrations",
       "etablissement": "Aix-Marseille Université",
       "mention": "",
-      "details": ""
+      "details": "",
+      "taches": []
     },
     {
       "periode": "Septembre 2012 - Juillet 2015",
       "diplome": "Baccalauréat Scientifique",
       "etablissement": "Gap, France",
       "mention": "Mention Très Bien",
-      "details": ""
+      "details": "",
+      "taches": []
     }
   ],
   "langues": [
@@ -126,86 +143,102 @@
     {
       "nom": "Lumion",
       "niveau": 10,
-      "categorie": "Rendu 3D"
+      "categorie": "Rendu 3D",
+      "frequence": 7
     },
     {
       "nom": "Rhinocéros 3D",
       "niveau": 9,
-      "categorie": "Modélisation"
+      "categorie": "CAO, Modélisation, BIM",
+      "frequence": 15
     },
     {
-      "nom": "VisualARQ (BIM)",
+      "nom": "VisualARQ (Rhino)",
       "niveau": 9,
-      "categorie": "BIM"
+      "categorie": "BIM",
+      "frequence": 14
     },
     {
-      "nom": "Adobe Illustrator",
+      "nom": "Illustrator",
       "niveau": 8,
-      "categorie": "Adobe"
+      "categorie": "Adobe",
+      "frequence": 12
     },
     {
-      "nom": "Adobe Photoshop",
+      "nom": "Photoshop",
       "niveau": 8,
-      "categorie": "Adobe"
+      "categorie": "Adobe",
+      "frequence": 11
     },
     {
-      "nom": "Adobe InDesign",
+      "nom": "InDesign",
       "niveau": 8,
-      "categorie": "Adobe"
+      "categorie": "Adobe",
+      "frequence": 10
     },
     {
-      "nom": "IA (Intelligence Artificielle)",
+      "nom": "IA",
       "niveau": 8,
-      "categorie": "Autres"
+      "categorie": "rendus 3D",
+      "frequence": 1
     },
     {
       "nom": "ArchiCAD",
       "niveau": 7,
-      "categorie": "BIM"
+      "categorie": "BIM",
+      "frequence": 9
     },
     {
-      "nom": "Grasshopper",
+      "nom": "Grasshopper (Rhino)",
       "niveau": 7,
-      "categorie": "Design Paramétrique"
+      "categorie": "Design Paramétrique",
+      "frequence": 8
     },
     {
-      "nom": "Adobe Lightroom",
-      "niveau": 7,
-      "categorie": "Adobe"
+      "nom": "Lightroom",
+      "niveau": 5,
+      "categorie": "Adobe",
+      "frequence": 5
     },
     {
       "nom": "SketchUp 3D",
       "niveau": 6,
-      "categorie": "Modélisation"
+      "categorie": "Modélisation",
+      "frequence": 3
     },
     {
       "nom": "AutoCAD",
       "niveau": 5,
-      "categorie": "CAO"
+      "categorie": "CAO",
+      "frequence": 3
     },
     {
       "nom": "QGIS",
       "niveau": 3,
-      "categorie": "SIG"
+      "categorie": "SIG",
+      "frequence": 2
     },
     {
-      "nom": "LandDesign",
+      "nom": "LandDesign (Rhino)",
       "niveau": 8,
-      "categorie": "Paysage",
-      "note": "Connaissance"
+      "categorie": "Paysage, BIM",
+      "note": "Connaissance",
+      "frequence": 7
     },
     {
-      "nom": "Ladybug",
+      "nom": "Ladybug (Rhino)",
       "niveau": 4,
       "categorie": "Analyse Climatique",
-      "note": "Connaissance"
+      "note": "Connaissance",
+      "frequence": 5
     }
   ],
   "interets": [
-    "Méditation Vipassana",
-    "Voyage",
-    "Sports de plein air",
-    "Yoga",
-    "Acroyoga"
+    "Méditation",
+    "Voyages",
+    "Philosophie",
+    "Ski de randonnée",
+    "Trekking",
+    "Bikepaking"
   ]
 }
