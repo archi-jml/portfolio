@@ -58,6 +58,9 @@ function displayCV(data) {
     // Intérêts
     displayInterets(data.interets);
 
+    // Infos complémentaires
+    displayInfosComp(data.infos_complementaires);
+
     // Observer pour animer les jauges au scroll
     observeSkillBars();
 }
@@ -263,6 +266,20 @@ function displayInterets(interets) {
         tag.className = 'cv-interet-tag';
         tag.textContent = interet;
         container.appendChild(tag);
+    });
+}
+
+function displayInfosComp(infos) {
+    const container = document.getElementById('cv-infos-comp');
+    if (!container || !infos || infos.length === 0) return;
+
+    container.innerHTML = '';
+
+    infos.forEach(info => {
+        const p = document.createElement('p');
+        p.className = 'cv-info-comp-item';
+        p.textContent = info;
+        container.appendChild(p);
     });
 }
 
