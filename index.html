@@ -16,7 +16,7 @@
             <a href="#" class="nav-logo">Jules Manucci Lasnon - Architecte DE</a>
             <div class="nav-links">
                 <a href="#projets" class="nav-link">Projets</a>
-                <a href="#about" class="nav-link">À propos</a>
+                <a href="#about" class="nav-link">Qui suis-je ?</a>
                 <a href="#cv" class="nav-link">CV</a>
                 <a href="#contact" class="nav-link">Contact</a>
             </div>
@@ -28,7 +28,7 @@
         <div class="container">
             <div class="section-header">
                 <span class="section-number">01</span>
-                <h2 class="section-title">Mes Projets</h2>
+                <h2 class="section-title">Projets</h2>
             </div>
             <div id="projects-grid" class="projects-grid">
                 <!-- Les projets seront chargés dynamiquement depuis projects.json -->
@@ -72,75 +72,43 @@
                 <span class="section-number">03</span>
                 <h2 class="section-title">CV</h2>
             </div>
-            <div class="cv-content">
+            
+            <!-- Info personnelle -->
+            <div id="cv-info-perso" class="cv-info-perso"></div>
+            
+            <!-- Grid pour Expériences et Formation -->
+            <div class="cv-main-grid">
+                <!-- Expériences -->
                 <div class="cv-column">
-                    <h3 class="cv-category">Formation</h3>
-                    <div class="cv-item">
-                        <div class="cv-year">2023 - 2025</div>
-                        <div class="cv-details">
-                            <h4>Diplôme d'État d'Architecte</h4>
-                            <p>ENSA Grenoble - Mention Très Bien</p>
-                        </div>
-                    </div>
-                    <div class="cv-item">
-                        <div class="cv-year">2020 - 2021</div>
-                        <div class="cv-details">
-                            <h4>Diplôme d'Études en Architecture</h4>
-                            <p>Beaux-Arts, Istanbul (MSGSU)</p>
-                        </div>
-                    </div>
-                    <div class="cv-item">
-                        <div class="cv-year">2018 - 2020</div>
-                        <div class="cv-details">
-                            <h4>Licence en Architecture</h4>
-                            <p>ENSA Grenoble</p>
-                        </div>
-                    </div>
-                    <div class="cv-item">
-                        <div class="cv-year">2015 - 2017</div>
-                        <div class="cv-details">
-                            <h4>DUT Gestion des Entreprises et des Administrations</h4>
-                            <p>Aix-Marseille Université</p>
-                        </div>
-                    </div>
+                    <h3 class="cv-category">Expérience Professionnelle</h3>
+                    <div id="cv-experiences" class="cv-list"></div>
                 </div>
                 
+                <!-- Formation -->
                 <div class="cv-column">
-                    <h3 class="cv-category">Expérience</h3>
-                    <div class="cv-item">
-                        <div class="cv-year">Août 2025 - Présent</div>
-                        <div class="cv-details">
-                            <h4>Architecte Freelance</h4>
-                            <p>Projets variés en indépendant</p>
-                        </div>
+                    <h3 class="cv-category">Formation</h3>
+                    <div id="cv-formations" class="cv-list"></div>
+                </div>
+            </div>
+            
+            <!-- Grid pour Compétences -->
+            <div class="cv-skills-grid">
+                <!-- Logiciels avec jauges -->
+                <div class="cv-column-full">
+                    <h3 class="cv-category">Logiciels & Compétences Techniques</h3>
+                    <div id="cv-logiciels" class="cv-skills-list"></div>
+                </div>
+                
+                <!-- Langues et Intérêts -->
+                <div class="cv-secondary-grid">
+                    <div class="cv-column-small">
+                        <h3 class="cv-category-small">Langues</h3>
+                        <div id="cv-langues" class="cv-langues-list"></div>
                     </div>
-                    <div class="cv-item">
-                        <div class="cv-year">Janvier 2024 - Présent</div>
-                        <div class="cv-details">
-                            <h4>Assistance Maîtrise d'Ouvrage</h4>
-                            <p>Vipassana France - Dhamma Mahi, Yonne</p>
-                        </div>
-                    </div>
-                    <div class="cv-item">
-                        <div class="cv-year">Mars - Décembre 2024</div>
-                        <div class="cv-details">
-                            <h4>Stage - TOA Architectes Associés</h4>
-                            <p>Direction Pascal Thomas - Paris-Grenoble<br>Analyse, esquisse, coordination</p>
-                        </div>
-                    </div>
-                    <div class="cv-item">
-                        <div class="cv-year">Février - Avril 2022</div>
-                        <div class="cv-details">
-                            <h4>Stage - Heritage Foundation of Pakistan</h4>
-                            <p>Direction Yasmeen Lari - Karachi<br>Architecture humanitaire, 0 carbone, patrimoine</p>
-                        </div>
-                    </div>
-                    <div class="cv-item">
-                        <div class="cv-year">Septembre 2018 - Juillet 2021</div>
-                        <div class="cv-details">
-                            <h4>Stage - Nizar Hadad Architecte</h4>
-                            <p>Baskinta, Liban<br>Projet "LifeHaus" - Maison semi-enterrée inspirée des Earthships</p>
-                        </div>
+                    
+                    <div class="cv-column-small">
+                        <h3 class="cv-category-small">Centres d'Intérêt</h3>
+                        <div id="cv-interets" class="cv-interets-list"></div>
                     </div>
                 </div>
             </div>

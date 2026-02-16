@@ -3,6 +3,7 @@
 // ==========================================
 
 let projects = [];
+let cvData = null;
 let currentOpenPanel = null;
 let currentLightboxIndex = 0;
 let currentProjectImages = [];
@@ -22,6 +23,263 @@ async function loadProjects() {
         const grid = document.getElementById('projects-grid');
         grid.innerHTML = '<p style="grid-column: 1/-1; text-align: center; color: #666;">Erreur lors du chargement des projets.</p>';
     }
+}
+
+// ==========================================
+// CHARGEMENT DU CV
+// ==========================================
+
+async function loadCV() {
+    try {
+        const response = await fetch('data/cv.json');
+        cvData = await response.json();
+        displayCV(cvData);
+    } catch (error) {
+        console.error('Erreur lors du chargement du CV:', error);
+    }
+}
+
+function displayCV(data) {
+    // Info personnelle
+    displayInfoPerso(data.info_perso);
+    
+    // Expériences
+    displayExperiences(data.experiences);
+    
+    // Formations
+    displayFormations(data.formations);
+    
+    // Logiciels
+    displayLogiciels(data.logiciels);
+    
+    // Langues
+    displayLangues(data.langues);
+    
+    // Intérêts
+    displayInterets(data.interets);
+    
+    // Observer pour animer les jauges au scroll
+    observeSkillBars();
+}
+
+function displayInfoPerso(info) {
+    const container = document.getElementById('cv-info-perso');
+    if (!container) return;
+    
+    let html = `<p><strong>${info.nom}</strong> • Né le ${info.date_naissance} à ${info.lieu_naissance}</p>`;
+    
+    if (info.equipement) {
+        html += `<p>${info.equipement}</p>`;
+    }
+    
+    if (info.vehicule) {
+        html += `<p>Véhiculé</p>`;
+    }
+    
+    container.innerHTML = html;
+}
+
+function displayExperiences(experiences) {
+    const container = document.getElementById('cv-experiences');
+    if (!container) return;
+    
+    container.innerHTML = '';
+    
+    experiences.forEach(exp => {
+        const item = document.createElement('div');
+        item.className = 'cv-item';
+        
+        const year = document.createElement('div');
+        year.className = 'cv-year';
+        year.textContent = exp.periode;
+        
+        const details = document.createElement('div');
+        details.className = 'cv-details';
+        
+        let html = `<h4>${exp.poste}</h4>`;
+        
+        if (exp.entreprise) {
+            html += `<div class="cv-entreprise">${exp.entreprise}</div>`;
+        }
+        
+        if (exp.lieu) {
+            html += `<div class="cv-lieu">${exp.lieu}</div>`;
+        }
+        
+        if (exp.description) {
+            html += `<p>${exp.description}</p>`;
+        }
+        
+        details.innerHTML = html;
+        
+        item.appendChild(year);
+        item.appendChild(details);
+        container.appendChild(item);
+    });
+}
+
+function displayFormations(formations) {
+    const container = document.getElementById('cv-formations');
+    if (!container) return;
+    
+    container.innerHTML = '';
+    
+    formations.forEach(form => {
+        const item = document.createElement('div');
+        item.className = 'cv-item';
+        
+        const year = document.createElement('div');
+        year.className = 'cv-year';
+        year.textContent = form.periode;
+        
+        const details = document.createElement('div');
+        details.className = 'cv-details';
+        
+        let html = `<h4>${form.diplome}</h4>`;
+        
+        if (form.etablissement) {
+            html += `<div class="cv-entreprise">${form.etablissement}</div>`;
+        }
+        
+        if (form.mention) {
+            html += `<span class="cv-mention">${form.mention}</span>`;
+        }
+        
+        if (form.details) {
+            html += `<p>${form.details}</p>`;
+        }
+        
+        details.innerHTML = html;
+        
+        item.appendChild(year);
+        item.appendChild(details);
+        container.appendChild(item);
+    });
+}
+
+function displayLogiciels(logiciels) {
+    const container = document.getElementById('cv-logiciels');
+    if (!container) return;
+    
+    container.innerHTML = '';
+    
+    // Trier par niveau décroissant
+    const sorted = [...logiciels].sort((a, b) => b.niveau - a.niveau);
+    
+    sorted.forEach(log => {
+        const item = document.createElement('div');
+        item.className = 'cv-skill-item';
+        
+        const header = document.createElement('div');
+        header.className = 'cv-skill-header';
+        
+        const left = document.createElement('div');
+        const name = document.createElement('span');
+        name.className = 'cv-skill-name';
+        name.textContent = log.nom;
+        left.appendChild(name);
+        
+        if (log.categorie) {
+            const cat = document.createElement('span');
+            cat.className = 'cv-skill-categorie';
+            cat.textContent = ` • ${log.categorie}`;
+            left.appendChild(cat);
+        }
+        
+        header.appendChild(left);
+        
+        if (log.niveau > 0) {
+            const level = document.createElement('span');
+            level.className = 'cv-skill-level';
+            level.textContent = `${log.niveau}/10`;
+            header.appendChild(level);
+        }
+        
+        item.appendChild(header);
+        
+        // Jauge seulement si niveau > 0
+        if (log.niveau > 0) {
+            const bar = document.createElement('div');
+            bar.className = 'cv-skill-bar';
+            
+            const fill = document.createElement('div');
+            fill.className = 'cv-skill-fill';
+            fill.dataset.level = log.niveau;
+            
+            bar.appendChild(fill);
+            item.appendChild(bar);
+        } else if (log.note) {
+            const note = document.createElement('div');
+            note.className = 'cv-skill-note';
+            note.textContent = log.note;
+            item.appendChild(note);
+        }
+        
+        container.appendChild(item);
+    });
+}
+
+function displayLangues(langues) {
+    const container = document.getElementById('cv-langues');
+    if (!container) return;
+    
+    container.innerHTML = '';
+    
+    langues.forEach(lang => {
+        const item = document.createElement('div');
+        item.className = 'cv-langue-item';
+        
+        const nom = document.createElement('span');
+        nom.className = 'cv-langue-nom';
+        nom.textContent = lang.langue;
+        
+        const niveau = document.createElement('span');
+        niveau.className = 'cv-langue-niveau';
+        niveau.textContent = lang.niveau;
+        
+        item.appendChild(nom);
+        item.appendChild(niveau);
+        container.appendChild(item);
+    });
+}
+
+function displayInterets(interets) {
+    const container = document.getElementById('cv-interets');
+    if (!container) return;
+    
+    container.innerHTML = '';
+    
+    interets.forEach(interet => {
+        const tag = document.createElement('span');
+        tag.className = 'cv-interet-tag';
+        tag.textContent = interet;
+        container.appendChild(tag);
+    });
+}
+
+function observeSkillBars() {
+    const skillBars = document.querySelectorAll('.cv-skill-fill');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const fill = entry.target;
+                const level = parseInt(fill.dataset.level);
+                const percentage = (level / 10) * 100;
+                
+                setTimeout(() => {
+                    fill.style.width = `${percentage}%`;
+                    fill.classList.add('animate');
+                }, 100);
+                
+                observer.unobserve(fill);
+            }
+        });
+    }, {
+        threshold: 0.5
+    });
+    
+    skillBars.forEach(bar => observer.observe(bar));
 }
 
 function displayProjects(projects) {
@@ -109,32 +367,30 @@ function toggleProjectPanel(project, clickedCard) {
     // Créer et insérer le nouveau panneau
     const panel = createProjectPanel(project);
     
-    // Trouver la position où insérer le panneau (après la ligne de la carte cliquée)
-    const cards = Array.from(grid.children).filter(el => el.classList.contains('project-card'));
-    const clickedIndex = cards.indexOf(clickedCard);
-    const columns = getGridColumns();
-    const rowEndIndex = Math.ceil((clickedIndex + 1) / columns) * columns;
-    
-    // Insérer le panneau
-    if (rowEndIndex >= cards.length) {
-        grid.appendChild(panel);
-    } else {
-        grid.insertBefore(panel, cards[rowEndIndex]);
-    }
+    // Insérer le panneau directement dans le body (overlay)
+    document.body.appendChild(panel);
     
     // Marquer la carte comme active
+    const cards = document.querySelectorAll('.project-card');
     cards.forEach(c => c.classList.remove('active'));
     clickedCard.classList.add('active');
     
     // Ouvrir le panneau avec animation
     setTimeout(() => {
         panel.classList.add('open');
-        
-        // Scroll vers le panneau
-        setTimeout(() => {
-            panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        }, 300);
     }, 50);
+    
+    // Bloquer le scroll de la page
+    document.body.style.overflow = 'hidden';
+    
+    // Fermer avec la touche Escape
+    const handleEscape = (e) => {
+        if (e.key === 'Escape') {
+            closeProjectPanel();
+            document.removeEventListener('keydown', handleEscape);
+        }
+    };
+    document.addEventListener('keydown', handleEscape);
     
     currentOpenPanel = panel;
 }
@@ -143,6 +399,13 @@ function createProjectPanel(project) {
     const panel = document.createElement('div');
     panel.className = 'project-detail-panel';
     panel.dataset.projectId = project.id;
+    
+    // Fermer en cliquant sur le fond noir
+    panel.addEventListener('click', (e) => {
+        if (e.target === panel) {
+            closeProjectPanel();
+        }
+    });
     
     const content = document.createElement('div');
     content.className = 'project-detail-content';
@@ -224,6 +487,9 @@ function closeProjectPanel() {
     
     panel.classList.remove('open');
     
+    // Débloquer le scroll de la page
+    document.body.style.overflow = '';
+    
     // Retirer la classe active de toutes les cartes
     document.querySelectorAll('.project-card').forEach(card => {
         card.classList.remove('active');
@@ -233,7 +499,7 @@ function closeProjectPanel() {
         if (panel.parentNode) {
             panel.parentNode.removeChild(panel);
         }
-    }, 600);
+    }, 400);
     
     currentOpenPanel = null;
 }
@@ -466,6 +732,7 @@ function initStickyNav() {
 
 document.addEventListener('DOMContentLoaded', () => {
     loadProjects();
+    loadCV();
     initSmoothScroll();
     initStickyNav();
     observeElements();

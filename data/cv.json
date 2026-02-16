@@ -1,0 +1,211 @@
+{
+  "info_perso": {
+    "nom": "Jules Manucci-Lasnon",
+    "date_naissance": "17 août 1997",
+    "lieu_naissance": "Ventavon (05)",
+    "vehicule": true,
+    "equipement": "Poste de travail portable et licences logicielles personnelles"
+  },
+  "experiences": [
+    {
+      "periode": "Août 2025 - Présent",
+      "poste": "Architecte Freelance",
+      "entreprise": "",
+      "lieu": "",
+      "description": "Projets variés en indépendant"
+    },
+    {
+      "periode": "Janvier 2024 - Présent",
+      "poste": "Assistance Maîtrise d'Ouvrage",
+      "entreprise": "Vipassana France",
+      "lieu": "Dhamma Mahi, Yonne",
+      "description": ""
+    },
+    {
+      "periode": "Mars - Décembre 2024",
+      "poste": "Stage - Architecte",
+      "entreprise": "TOA Architectes Associés",
+      "lieu": "Paris - Grenoble",
+      "description": "Sous la direction de Pascal Thomas. Analyse, esquisse, coordination"
+    },
+    {
+      "periode": "Février - Avril 2022",
+      "poste": "Stage - Architecture Humanitaire",
+      "entreprise": "Heritage Foundation of Pakistan",
+      "lieu": "Karachi, Pakistan",
+      "description": "Sous la direction de Yasmeen Lari. Architecture humanitaire, woman-empowerment, 0 carbone, préservation du patrimoine"
+    },
+    {
+      "periode": "Septembre 2018 - Juillet 2021",
+      "poste": "Stage - Architecte",
+      "entreprise": "Nizar Hadad Architecte",
+      "lieu": "Baskinta, Liban",
+      "description": "Projet \"LifeHaus\" : Chantier du prototype de maison semi-enterrée inspirée des Earthships"
+    },
+    {
+      "periode": "Mars - Mai 2017",
+      "poste": "Stage",
+      "entreprise": "SARL Les Logis de Provence",
+      "lieu": "Sisteron, Hautes-Alpes",
+      "description": "Gestion administrative et financière, suivi de chantier"
+    },
+    {
+      "periode": "2015 - Présent",
+      "poste": "Expériences Diverses sur Chantier",
+      "entreprise": "",
+      "lieu": "",
+      "description": "Participation à différents projets, petit et gros œuvre, éco-construction"
+    }
+  ],
+  "formations": [
+    {
+      "periode": "Septembre 2023 - Juillet 2025",
+      "diplome": "Diplôme d'État d'Architecte",
+      "etablissement": "ENSA Grenoble",
+      "mention": "Mention Très Bien",
+      "details": "Cycle de master"
+    },
+    {
+      "periode": "Juillet 2020 - Mai 2023",
+      "diplome": "Voyage d'Études",
+      "etablissement": "",
+      "mention": "",
+      "details": "Italie, Croatie, Bulgarie, Géorgie, Turquie, Arménie, Iran, Pakistan, Inde, Nepal, Sri Lanka"
+    },
+    {
+      "periode": "2020 - 2021",
+      "diplome": "Diplôme d'Études en Architecture",
+      "etablissement": "Beaux-Arts, Istanbul (MSGSU)",
+      "mention": "",
+      "details": "Cycle de licence"
+    },
+    {
+      "periode": "2018 - 2020",
+      "diplome": "Licence en Architecture",
+      "etablissement": "ENSA Grenoble",
+      "mention": "",
+      "details": ""
+    },
+    {
+      "periode": "Juillet 2017 - Mai 2018",
+      "diplome": "Voyage d'Études",
+      "etablissement": "",
+      "mention": "",
+      "details": "Canada, Guatemala, Belize, Mexique, Cuba, Colombie, Équateur"
+    },
+    {
+      "periode": "Septembre 2015 - Juillet 2017",
+      "diplome": "DUT Gestion des Entreprises et des Administrations",
+      "etablissement": "Aix-Marseille Université",
+      "mention": "",
+      "details": ""
+    },
+    {
+      "periode": "Septembre 2012 - Juillet 2015",
+      "diplome": "Baccalauréat Scientifique",
+      "etablissement": "Gap, France",
+      "mention": "Mention Très Bien",
+      "details": ""
+    }
+  ],
+  "langues": [
+    {
+      "langue": "Français",
+      "niveau": "Natif"
+    },
+    {
+      "langue": "Anglais",
+      "niveau": "Excellent"
+    },
+    {
+      "langue": "Espagnol",
+      "niveau": "Courant"
+    }
+  ],
+  "logiciels": [
+    {
+      "nom": "Lumion",
+      "niveau": 10,
+      "categorie": "Rendu 3D"
+    },
+    {
+      "nom": "Rhinocéros 3D",
+      "niveau": 9,
+      "categorie": "Modélisation"
+    },
+    {
+      "nom": "VisualARQ (BIM)",
+      "niveau": 9,
+      "categorie": "BIM"
+    },
+    {
+      "nom": "Adobe Illustrator",
+      "niveau": 8,
+      "categorie": "Adobe"
+    },
+    {
+      "nom": "Adobe Photoshop",
+      "niveau": 8,
+      "categorie": "Adobe"
+    },
+    {
+      "nom": "Adobe InDesign",
+      "niveau": 8,
+      "categorie": "Adobe"
+    },
+    {
+      "nom": "IA (Intelligence Artificielle)",
+      "niveau": 8,
+      "categorie": "Autres"
+    },
+    {
+      "nom": "ArchiCAD",
+      "niveau": 7,
+      "categorie": "BIM"
+    },
+    {
+      "nom": "Grasshopper",
+      "niveau": 7,
+      "categorie": "Design Paramétrique"
+    },
+    {
+      "nom": "Adobe Lightroom",
+      "niveau": 7,
+      "categorie": "Adobe"
+    },
+    {
+      "nom": "SketchUp 3D",
+      "niveau": 6,
+      "categorie": "Modélisation"
+    },
+    {
+      "nom": "AutoCAD",
+      "niveau": 5,
+      "categorie": "CAO"
+    },
+    {
+      "nom": "QGIS",
+      "niveau": 3,
+      "categorie": "SIG"
+    },
+    {
+      "nom": "LandDesign",
+      "niveau": 8,
+      "categorie": "Paysage",
+      "note": "Connaissance"
+    },
+    {
+      "nom": "Ladybug",
+      "niveau": 4,
+      "categorie": "Analyse Climatique",
+      "note": "Connaissance"
+    }
+  ],
+  "interets": [
+    "Méditation Vipassana",
+    "Voyage",
+    "Sports de plein air",
+    "Yoga",
+    "Acroyoga"
+  ]
+}
