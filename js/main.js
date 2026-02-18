@@ -69,16 +69,37 @@ function displayInfoPerso(info) {
     const container = document.getElementById('cv-info-perso');
     if (!container) return;
 
-    let html = `<p><strong>${info.nom}</strong> • Né le ${info.date_naissance} à ${info.lieu_naissance}</p>`;
+    let html = '<div class="cv-info-perso-grid">';
 
-    if (info.equipement) {
-        html += `<p>${info.equipement}</p>`;
+    html += '<div class="cv-info-perso-identity">';
+    html += `<h3 class="cv-info-perso-name">${info.nom}</h3>`;
+    if (info.titre) {
+        html += `<p class="cv-info-perso-titre">${info.titre}</p>`;
+    }
+    html += `<p class="cv-info-perso-birth">Né le ${info.date_naissance} à ${info.lieu_naissance}</p>`;
+    html += '</div>';
+
+    html += '<div class="cv-info-perso-contact">';
+    if (info.email) {
+        html += `<p class="cv-info-perso-line"><span class="cv-info-perso-label">Email</span><a href="mailto:${info.email}">${info.email}</a></p>`;
+    }
+    if (info.telephone) {
+        html += `<p class="cv-info-perso-line"><span class="cv-info-perso-label">Tél.</span><a href="tel:${info.telephone.replace(/\s/g, '')}">${info.telephone}</a></p>`;
+    }
+    html += '</div>';
+
+    if (info.adresses && info.adresses.length > 0) {
+        const filledAddresses = info.adresses.filter(a => a.valeur);
+        if (filledAddresses.length > 0) {
+            html += '<div class="cv-info-perso-addresses">';
+            filledAddresses.forEach(addr => {
+                html += `<p class="cv-info-perso-line"><span class="cv-info-perso-label">${addr.label}</span>${addr.valeur}</p>`;
+            });
+            html += '</div>';
+        }
     }
 
-    if (info.vehicule) {
-        html += `<p>Véhiculé</p>`;
-    }
-
+    html += '</div>';
     container.innerHTML = html;
 }
 
@@ -237,22 +258,108 @@ function displayLangues(langues) {
 
     container.innerHTML = '';
 
+    const niveauMap = {
+        'Notions': 1,
+        'Bases': 2,
+        'Intermédiaire': 3,
+        'Courant': 4,
+        'Excellent': 5,
+        'Natif': 6
+    };
+
     langues.forEach(lang => {
         const item = document.createElement('div');
         item.className = 'cv-langue-item';
 
-        const nom = document.createElement('span');
+        const gaugeContainer = document.createElement('div');
+        gaugeContainer.className = 'cv-langue-gauge-container';
+
+        const level = niveauMap[lang.niveau] || 3;
+        const angle = -90 + ((level - 1) / 5) * 180;
+
+        const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+        svg.setAttribute('viewBox', '0 0 100 60');
+        svg.setAttribute('class', 'cv-langue-gauge');
+
+        for (let i = 0; i < 6; i++) {
+            const tickAngle = -90 + (i / 5) * 180;
+            const tickRad = (tickAngle * Math.PI) / 180;
+            const x1 = 50 + 38 * Math.cos(tickRad);
+            const y1 = 50 + 38 * Math.sin(tickRad);
+            const x2 = 50 + 45 * Math.cos(tickRad);
+            const y2 = 50 + 45 * Math.sin(tickRad);
+
+            const tick = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+            tick.setAttribute('x1', x1);
+            tick.setAttribute('y1', y1);
+            tick.setAttribute('x2', x2);
+            tick.setAttribute('y2', y2);
+            tick.setAttribute('class', 'cv-gauge-tick');
+            svg.appendChild(tick);
+        }
+
+        const arcBg = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+        arcBg.setAttribute('d', 'M 5 50 A 45 45 0 0 1 95 50');
+        arcBg.setAttribute('class', 'cv-gauge-arc-bg');
+        svg.appendChild(arcBg);
+
+        const arcFill = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+        const fillAngle = ((level - 1) / 5) * 180;
+        const fillRad = (fillAngle * Math.PI) / 180;
+        const endX = 50 - 45 * Math.cos(fillRad);
+        const endY = 50 - 45 * Math.sin(fillRad);
+        const largeArc = fillAngle > 180 ? 1 : 0;
+        arcFill.setAttribute('d', `M 5 50 A 45 45 0 ${largeArc} 1 ${endX} ${endY}`);
+        arcFill.setAttribute('class', 'cv-gauge-arc-fill');
+        arcFill.dataset.level = level;
+        svg.appendChild(arcFill);
+
+        const needle = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+        needle.setAttribute('class', 'cv-gauge-needle');
+        needle.dataset.angle = angle;
+        needle.innerHTML = `
+            <line x1="50" y1="50" x2="50" y2="12" class="cv-gauge-needle-line"/>
+            <circle cx="50" cy="50" r="4" class="cv-gauge-needle-center"/>
+        `;
+        svg.appendChild(needle);
+
+        gaugeContainer.appendChild(svg);
+
+        const nom = document.createElement('div');
         nom.className = 'cv-langue-nom';
         nom.textContent = lang.langue;
 
-        const niveau = document.createElement('span');
-        niveau.className = 'cv-langue-niveau';
-        niveau.textContent = lang.niveau;
+        const niveauText = document.createElement('div');
+        niveauText.className = 'cv-langue-niveau-text';
+        niveauText.textContent = lang.niveau;
 
+        item.appendChild(gaugeContainer);
         item.appendChild(nom);
-        item.appendChild(niveau);
+        item.appendChild(niveauText);
         container.appendChild(item);
     });
+
+    observeLangueGauges();
+}
+
+function observeLangueGauges() {
+    const needles = document.querySelectorAll('.cv-gauge-needle');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const needle = entry.target;
+                const angle = parseFloat(needle.dataset.angle);
+                setTimeout(() => {
+                    needle.style.transform = `rotate(${angle}deg)`;
+                    needle.classList.add('animate');
+                }, 100);
+                observer.unobserve(needle);
+            }
+        });
+    }, { threshold: 0.3 });
+
+    needles.forEach(needle => observer.observe(needle));
 }
 
 function displayInterets(interets) {
@@ -261,12 +368,16 @@ function displayInterets(interets) {
 
     container.innerHTML = '';
 
+    const ul = document.createElement('ul');
+    ul.className = 'cv-interets-simple-list';
+
     interets.forEach(interet => {
-        const tag = document.createElement('span');
-        tag.className = 'cv-interet-tag';
-        tag.textContent = interet;
-        container.appendChild(tag);
+        const li = document.createElement('li');
+        li.textContent = interet;
+        ul.appendChild(li);
     });
+
+    container.appendChild(ul);
 }
 
 function displayInfosComp(infos) {

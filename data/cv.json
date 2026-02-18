@@ -1,8 +1,21 @@
 {
   "info_perso": {
     "nom": "Jules Manucci-Lasnon",
+    "titre": "Architecte DE",
     "date_naissance": "17 août 1997",
     "lieu_naissance": "Ventavon (05)",
+    "email": "j.manucci.lasnon@gmail.com",
+    "telephone": "+33 6 88 61 99 36",
+    "adresses": [
+      {
+        "label": "Adresse principale",
+        "valeur": "998 Route de Laragne, 05300 VENTAVON"
+      },
+      {
+        "label": "Adresse secondaire",
+        "valeur": "14 Rue Longue des Capucins, 13001 MARSEILLE"
+      }
+    ],
     "equipement": ""
   },
   "experiences": [
@@ -13,46 +26,61 @@
       "lieu": "",
       "description": "Projets variés en indépendant",
       "taches": [
-        "Relevé de l'existant",
-        "Modélisation 3D",
-        "Suivi de chantier"
+        "PC",
+        "DCE",
+        "Suivi de chantier",
+        "Accompagnement à l'autoconstruction",
+        "Infographie"
       ]
     },
     {
       "periode": "Janvier 2024 - Présent",
-      "poste": "Assistant à laMaîtrise d'Ouvrage",
+      "poste": "Assistant Maîtrise d'Ouvrage",
       "entreprise": "Vipassana France",
       "lieu": "Dhamma Mahi, Yonne",
-      "description": "",
-      "taches": []
+      "description": "Coordination de la Commission Développement",
+      "taches": [
+        "Suivi urbanisme (nouveau PLU)",
+        "ESQ + APS",
+        "Coordination projets / équipe"
+      ]
     },
     {
       "periode": "Mars - Décembre 2024",
       "poste": "",
       "entreprise": "TOA Architectes Associés",
       "lieu": "Paris - Grenoble",
-      "description": "Sous la direction de Pascal Thomas. Analyse, esquisse, coordination",
-      "taches": []
+      "description": "Stage sous la direction de Pascal Thomas",
+      "taches": [
+        "Etudes de Diagnostic et de Faisabilité"
+      ]
     },
     {
       "periode": "Février - Avril 2022",
-      "poste": "Stage - Architecture Humanitaire",
+      "poste": "",
       "entreprise": "Heritage Foundation of Pakistan",
       "lieu": "Karachi, Pakistan",
-      "description": "Sous la direction de Yasmeen Lari. Architecture humanitaire, woman-empowerment, 0 carbone, préservation du patrimoine",
-      "taches": []
+      "description": "Stage sous la direction de Yasmeen Lari. ",
+      "taches": [
+        "Humanitarian Architecture (Sindh Floods Rehabilitation)",
+        "Woman-empowerment (Yasmeen Lari’s Pakistani Chulah)",
+        "0 Carbon (SfAip)",
+        "Heritage conservation (Denso Hall Rahguzar Projects)"
+      ]
     },
     {
       "periode": "Septembre 2018 - Juillet 2021",
-      "poste": "Stage - Architecte",
+      "poste": "",
       "entreprise": "Nizar Hadad Architecte",
       "lieu": "Baskinta, Liban",
-      "description": "Projet \"LifeHaus\" : Chantier du prototype de maison semi-enterrée inspirée des Earthships",
-      "taches": []
+      "description": "Stage sous la direction de Nizar Hadad",
+      "taches": [
+        "Projet \"LifeHaus\" : Chantier du prototype de maison semi-enterrée inspirée des Earthships"
+      ]
     },
     {
       "periode": "Mars - Mai 2017",
-      "poste": "Stage",
+      "poste": " ",
       "entreprise": "SARL Les Logis de Provence",
       "lieu": "Sisteron, Hautes-Alpes",
       "description": "Gestion administrative et financière, suivi de chantier",
@@ -70,11 +98,14 @@
   "formations": [
     {
       "periode": "Septembre 2023 - Juillet 2025",
-      "diplome": "Diplôme d'État d'Architecte",
+      "diplome": "Diplôme d'État d'Architecte (DE)",
       "etablissement": "ENSA Grenoble",
       "mention": "Mention Très Bien",
-      "details": "Cycle de master",
-      "taches": []
+      "details": "Master AEdification, Grands Territoires, Villes ",
+      "taches": [
+        "sous la direction de Aysegul Cankat",
+        "parcours Architecte-Ingénieur (PArIn)"
+      ]
     },
     {
       "periode": "Juillet 2020 - Mai 2023",
@@ -87,17 +118,9 @@
     {
       "periode": "2020 - 2021",
       "diplome": "Diplôme d'Études en Architecture",
-      "etablissement": "Beaux-Arts, Istanbul (MSGSU)",
+      "etablissement": "Beaux-Arts, Istanbul (MSGSU), ENSA Grenoble",
       "mention": "",
       "details": "Cycle de licence",
-      "taches": []
-    },
-    {
-      "periode": "2018 - 2020",
-      "diplome": "Licence en Architecture",
-      "etablissement": "ENSA Grenoble",
-      "mention": "",
-      "details": "",
       "taches": []
     },
     {
@@ -113,8 +136,12 @@
       "diplome": "DUT Gestion des Entreprises et des Administrations",
       "etablissement": "Aix-Marseille Université",
       "mention": "",
-      "details": "",
-      "taches": []
+      "details": "Option Gestion et Management des Organisations",
+      "taches": [
+        "Gestion administrative et financière",
+        "Analyse et suivi des budgets",
+        "Gestion contractuelle"
+      ]
     },
     {
       "periode": "Septembre 2012 - Juillet 2015",
@@ -226,6 +253,13 @@
       "frequence": 7
     },
     {
+      "nom": "Impression 3D",
+      "niveau": 7,
+      "categorie": "Modélisme",
+      "note": " ",
+      "frequence": 7
+    },
+    {
       "nom": "Ladybug (Rhino)",
       "niveau": 4,
       "categorie": "Analyse Climatique",
@@ -243,6 +277,10 @@
   ],
   "infos_complementaires": [
     "Véhiculé",
-    "Poste de travail portable et licences logicielles personnelles"
+    "Station de travail portable et performante (i7, 32 Go de RAM, RTX)",
+    "Licences personelles : Rhino 8 + VisualARQ + LandsDesign",
+    "Imprimante Multifonction A3/A4 Brother MCF-J6955DW",
+    "Impression 3D : Creality CR 10S PRO",
+    "Solution cloud Infomaniak , data centers écoresponsables et souverains"
   ]
 }
