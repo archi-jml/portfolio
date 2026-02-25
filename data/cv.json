@@ -1,6 +1,6 @@
 {
   "info_perso": {
-    "nom": "Jules Manucci-Lasnon",
+    "nom": "Jules Manucci Lasnon",
     "titre": "Architecte DE",
     "date_naissance": "17 août 1997",
     "lieu_naissance": "Ventavon (05)",
@@ -21,10 +21,10 @@
   "experiences": [
     {
       "periode": "Août 2025 - Présent",
-      "poste": "Architecte Freelance",
-      "entreprise": "",
+      "poste": " ",
+      "entreprise": "Freelance",
       "lieu": "",
-      "description": "Projets variés en indépendant",
+      "description": " ",
       "taches": [
         "PC",
         "DCE",
@@ -60,7 +60,7 @@
       "poste": "",
       "entreprise": "Heritage Foundation of Pakistan",
       "lieu": "Karachi, Pakistan",
-      "description": "Stage sous la direction de Yasmeen Lari. ",
+      "description": "Stage sous la direction de <strong>Yasmeen Lari</strong>. ",
       "taches": [
         "Humanitarian Architecture (Sindh Floods Rehabilitation)",
         "Woman-empowerment (Yasmeen Lari’s Pakistani Chulah)",
@@ -69,7 +69,7 @@
       ]
     },
     {
-      "periode": "Septembre 2018 - Juillet 2021",
+      "periode": "Juin 2019 - Juillet 2019",
       "poste": "",
       "entreprise": "Nizar Hadad Architecte",
       "lieu": "Baskinta, Liban",
@@ -104,7 +104,7 @@
       "details": "Master AEdification, Grands Territoires, Villes ",
       "taches": [
         "sous la direction de Aysegul Cankat",
-        "parcours Architecte-Ingénieur (PArIn)"
+        "parcours <strong>Architecte-Ingénieur (PArIn)</strong>"
       ]
     },
     {
@@ -116,7 +116,7 @@
       "taches": []
     },
     {
-      "periode": "2020 - 2021",
+      "periode": "2018 - 2021",
       "diplome": "Diplôme d'Études en Architecture",
       "etablissement": "Beaux-Arts, Istanbul (MSGSU), ENSA Grenoble",
       "mention": "",
@@ -276,11 +276,11 @@
     "Bikepaking"
   ],
   "infos_complementaires": [
-    "Véhiculé",
-    "Station de travail portable et performante (i7, 32 Go de RAM, RTX)",
-    "Licences personelles : Rhino 8 + VisualARQ + LandsDesign",
-    "Imprimante Multifonction A3/A4 Brother MCF-J6955DW",
-    "Impression 3D : Creality CR 10S PRO",
-    "Solution cloud Infomaniak , data centers écoresponsables et souverains"
+    "<strong>Véhiculé</strong>",
+    "Station de travail portable et performante (<strong>i7, 32 Go de RAM, RTX</strong>)",
+    "Licences personelles : <strong>Rhino 8</strong> + VisualARQ + LandsDesign",
+    "<strong>Imprimante Multifonction A3/A4 </strong> Brother MCF-J6955DW",
+    "<strong>Impression 3D : </strong> Creality CR 10S PRO",
+    "Solution cloud : <strong>Infomaniak </strong> , data centers écoresponsables et européens"
   ]
 }
