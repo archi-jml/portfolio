@@ -1064,9 +1064,7 @@ a {
 }
 
 .cv-gauge-needle {
-    transform-origin: 50px 50px;
-    transform: rotate(-90deg);
-    transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1);
+    /* rotation gérée via attribut SVG transform + JS (compatibilité iOS Safari) */
 }
 
 .cv-gauge-needle-line {
@@ -1140,9 +1138,28 @@ a {
         flex-direction: column;
         gap: 0.4rem;
     }
+
+    .cv-info-perso-identity,
+    .cv-info-perso-contact,
+    .cv-info-perso-addresses {
+        flex: 0 0 auto;
+    }
 }
 
 @media (max-width: 768px) {
+    .section {
+        padding: var(--spacing-lg) 0;
+    }
+
+    .cv-main-grid {
+        gap: var(--spacing-sm);
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .cv-skills-grid {
+        padding-top: var(--spacing-sm);
+    }
+
     .cv-item {
         grid-template-columns: 85px 1fr;
     }

@@ -313,10 +313,11 @@ function displayLangues(langues) {
 
         const needle = document.createElementNS('http://www.w3.org/2000/svg', 'g');
         needle.setAttribute('class', 'cv-gauge-needle');
+        needle.setAttribute('transform', 'translate(50, 50) rotate(-90)');
         needle.dataset.angle = angle;
         needle.innerHTML = `
-            <line x1="50" y1="50" x2="50" y2="12" class="cv-gauge-needle-line"/>
-            <circle cx="50" cy="50" r="4" class="cv-gauge-needle-center"/>
+            <line x1="0" y1="0" x2="0" y2="-38" class="cv-gauge-needle-line"/>
+            <circle cx="0" cy="0" r="4" class="cv-gauge-needle-center"/>
         `;
         svg.appendChild(needle);
 
@@ -346,17 +347,33 @@ function observeLangueGauges() {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const needle = entry.target;
-                const angle = parseFloat(needle.dataset.angle);
-                setTimeout(() => {
-                    needle.style.transform = `rotate(${angle}deg)`;
-                    needle.classList.add('animate');
-                }, 100);
+                const targetAngle = parseFloat(needle.dataset.angle);
+                setTimeout(() => animateNeedle(needle, targetAngle), 100);
                 observer.unobserve(needle);
             }
         });
     }, { threshold: 0.3 });
 
     needles.forEach(needle => observer.observe(needle));
+}
+
+function animateNeedle(needle, targetAngle) {
+    const startAngle = -90;
+    const duration = 1000;
+    const startTime = performance.now();
+
+    function ease(t) {
+        return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+    }
+
+    function step(now) {
+        const p = Math.min((now - startTime) / duration, 1);
+        const cur = startAngle + (targetAngle - startAngle) * ease(p);
+        needle.setAttribute('transform', `translate(50, 50) rotate(${cur})`);
+        if (p < 1) requestAnimationFrame(step);
+    }
+
+    requestAnimationFrame(step);
 }
 
 function displayInterets(interets) {
