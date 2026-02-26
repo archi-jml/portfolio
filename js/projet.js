@@ -182,17 +182,11 @@ function renderPagination() {
                 ${prev ? `
                 <a href="#${prev.id}" class="pagination-link pagination-prev">
                     <span class="pagination-arrow">←</span>
-                    <span class="pagination-info">
-                        <span class="pagination-label">Projet précédent</span>
-                        <span class="pagination-name">${prev.title}</span>
-                    </span>
+                    <span class="pagination-label">Précédent</span>
                 </a>` : '<div class="pagination-empty"></div>'}
                 ${next ? `
                 <a href="#${next.id}" class="pagination-link pagination-next">
-                    <span class="pagination-info">
-                        <span class="pagination-label">Projet suivant</span>
-                        <span class="pagination-name">${next.title}</span>
-                    </span>
+                    <span class="pagination-label">Suivant</span>
                     <span class="pagination-arrow">→</span>
                 </a>` : '<div class="pagination-empty"></div>'}
             </div>

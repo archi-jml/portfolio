@@ -112,7 +112,11 @@ function displayExperiences(experiences) {
 
         const year = document.createElement('div');
         year.className = 'cv-year';
-        year.textContent = exp.periode;
+        year.innerHTML = `
+            <span class="cv-year-fin">${exp.date_fin || ''}</span>
+            <span class="cv-year-sep"></span>
+            <span class="cv-year-debut">${exp.date_debut || ''}</span>
+        `;
 
         const details = document.createElement('div');
         details.className = 'cv-details';
@@ -159,7 +163,11 @@ function displayFormations(formations) {
 
         const year = document.createElement('div');
         year.className = 'cv-year';
-        year.textContent = form.periode;
+        year.innerHTML = `
+            <span class="cv-year-fin">${form.date_fin || ''}</span>
+            <span class="cv-year-sep"></span>
+            <span class="cv-year-debut">${form.date_debut || ''}</span>
+        `;
 
         const details = document.createElement('div');
         details.className = 'cv-details';
@@ -423,12 +431,10 @@ function displayProjects(projects) {
 
 function createProjectCard(project) {
     const card = document.createElement('article');
-    // Suppression de l'animation d'apparition ('fade-in')
     card.className = 'project-card';
-    // card.style.transitionDelay removed
     card.dataset.projectId = project.id;
 
-    // Image
+    // Image + overlay
     const imageDiv = document.createElement('div');
     imageDiv.className = 'project-card-image';
 
@@ -446,25 +452,9 @@ function createProjectCard(project) {
     title.className = 'project-card-title';
     title.textContent = project.title;
 
-    // Métadonnées
-    const meta = document.createElement('div');
-    meta.className = 'project-card-meta';
-    meta.innerHTML = `
-        <span>${project.context}</span>
-        <span>•</span>
-        <span>${project.year}</span>
-    `;
-
-    // Description
-    const description = document.createElement('p');
-    description.className = 'project-card-description';
-    description.textContent = project.shortDescription;
-
     // Assemblage
     card.appendChild(imageDiv);
     card.appendChild(title);
-    card.appendChild(meta);
-    card.appendChild(description);
 
     // Événement clic → navigation vers la page projet
     card.addEventListener('click', () => {
@@ -500,6 +490,25 @@ function observeElements() {
 // NAVIGATION SMOOTH
 // ==========================================
 
+function smoothScrollTo(targetY, duration) {
+    const startY = window.scrollY;
+    const distance = targetY - startY;
+    let startTime = null;
+
+    function ease(t) {
+        return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+    }
+
+    function step(timestamp) {
+        if (!startTime) startTime = timestamp;
+        const progress = Math.min((timestamp - startTime) / duration, 1);
+        window.scrollTo(0, startY + distance * ease(progress));
+        if (progress < 1) requestAnimationFrame(step);
+    }
+
+    requestAnimationFrame(step);
+}
+
 function initSmoothScroll() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
@@ -515,11 +524,7 @@ function initSmoothScroll() {
             if (target) {
                 e.preventDefault();
                 const offsetTop = target.offsetTop - 80;
-
-                window.scrollTo({
-                    top: offsetTop,
-                    behavior: 'smooth'
-                });
+                smoothScrollTo(offsetTop, 750);
             }
         });
     });
@@ -609,9 +614,8 @@ document.addEventListener('DOMContentLoaded', () => {
     initMobileMenu();
     observeElements();
 
-    // Apparition retardée de l'indicateur de scroll (après l'animation du titre)
-    setTimeout(() => {
-        const heroScroll = document.querySelector('.hero-scroll');
-        if (heroScroll) heroScroll.classList.add('hero-scroll-visible');
-    }, 1400);
+    // Fondu d'entrée du hero (transition JS pour contourner prefers-reduced-motion)
+    setTimeout(() => document.querySelector('.hero-name')?.classList.add('visible'), 200);
+    setTimeout(() => document.querySelector('.hero-subtitle')?.classList.add('visible'), 550);
+    setTimeout(() => document.querySelector('.hero-scroll')?.classList.add('hero-scroll-visible'), 1100);
 });

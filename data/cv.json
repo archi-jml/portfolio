@@ -20,7 +20,8 @@
   },
   "experiences": [
     {
-      "periode": "Août 2025 - Présent",
+      "date_fin": "Présent",
+      "date_debut": "Août 2025",
       "poste": " ",
       "entreprise": "Freelance",
       "lieu": "",
@@ -29,24 +30,25 @@
         "PC",
         "DCE",
         "Suivi de chantier",
-        "Accompagnement à l'autoconstruction",
+        "Accompagnement à l’autoconstruction",
         "Infographie"
       ]
     },
     {
-      "periode": "Janvier 2024 - Présent",
-      "poste": "Assistant Maîtrise d'Ouvrage",
+      "date_fin": "Présent",
+      "date_debut": "Jan. 2024",
+      "poste": "Assistant Maîtrise d’Ouvrage - Coordinateur Développement",
       "entreprise": "Vipassana France",
       "lieu": "Dhamma Mahi, Yonne",
-      "description": "Coordination de la Commission Développement",
+      "description": " ",
       "taches": [
         "Suivi urbanisme (nouveau PLU)",
-        "ESQ + APS",
-        "Coordination projets / équipe"
+        "ESQ + APS"
       ]
     },
     {
-      "periode": "Mars - Décembre 2024",
+      "date_fin": "Déc. 2024",
+      "date_debut": "Mars 2024",
       "poste": "",
       "entreprise": "TOA Architectes Associés",
       "lieu": "Paris - Grenoble",
@@ -56,11 +58,12 @@
       ]
     },
     {
-      "periode": "Février - Avril 2022",
+      "date_fin": "Avr. 2022",
+      "date_debut": "Fév. 2022",
       "poste": "",
       "entreprise": "Heritage Foundation of Pakistan",
       "lieu": "Karachi, Pakistan",
-      "description": "Stage sous la direction de <strong>Yasmeen Lari</strong>. ",
+      "description": "Stage sous la direction de <strong>Yasmeen Lari</strong>.",
       "taches": [
         "Humanitarian Architecture (Sindh Floods Rehabilitation)",
         "Woman-empowerment (Yasmeen Lari’s Pakistani Chulah)",
@@ -69,7 +72,8 @@
       ]
     },
     {
-      "periode": "Juin 2019 - Juillet 2019",
+      "date_fin": "Juil. 2019",
+      "date_debut": "Juin 2019",
       "poste": "",
       "entreprise": "Nizar Hadad Architecte",
       "lieu": "Baskinta, Liban",
@@ -79,60 +83,58 @@
       ]
     },
     {
-      "periode": "Mars - Mai 2017",
+      "date_fin": "Mai 2017",
+      "date_debut": "Mars 2017",
       "poste": " ",
       "entreprise": "SARL Les Logis de Provence",
       "lieu": "Sisteron, Hautes-Alpes",
       "description": "Gestion administrative et financière, suivi de chantier",
       "taches": []
-    },
-    {
-      "periode": "2015 - Présent",
-      "poste": "Expériences Diverses sur Chantier",
-      "entreprise": "",
-      "lieu": "",
-      "description": "Participation à différents projets, petit et gros œuvre, éco-construction",
-      "taches": []
     }
   ],
   "formations": [
     {
-      "periode": "Septembre 2023 - Juillet 2025",
-      "diplome": "Diplôme d'État d'Architecte (DE)",
+      "date_fin": "Juil. 2025",
+      "date_debut": "Sept. 2023",
+      "diplome": "Diplôme d’État d’Architecte (DE)",
       "etablissement": "ENSA Grenoble",
       "mention": "Mention Très Bien",
-      "details": "Master AEdification, Grands Territoires, Villes ",
+      "details": "Master AEdification, Grands Territoires, Villes",
       "taches": [
         "sous la direction de Aysegul Cankat",
         "parcours <strong>Architecte-Ingénieur (PArIn)</strong>"
       ]
     },
     {
-      "periode": "Juillet 2020 - Mai 2023",
-      "diplome": "Voyage d'Études",
+      "date_fin": "Mai 2023",
+      "date_debut": "Juil. 2020",
+      "diplome": "Voyage d’Études",
       "etablissement": "",
       "mention": "",
       "details": "Italie, Croatie, Bulgarie, Géorgie, Turquie, Arménie, Iran, Pakistan, Inde, Nepal, Sri Lanka",
       "taches": []
     },
     {
-      "periode": "2018 - 2021",
-      "diplome": "Diplôme d'Études en Architecture",
+      "date_fin": "2021",
+      "date_debut": "2018",
+      "diplome": "Diplôme d’Études en Architecture",
       "etablissement": "Beaux-Arts, Istanbul (MSGSU), ENSA Grenoble",
       "mention": "",
       "details": "Cycle de licence",
       "taches": []
     },
     {
-      "periode": "Juillet 2017 - Mai 2018",
-      "diplome": "Voyage d'Études",
+      "date_fin": "Mai 2018",
+      "date_debut": "Juil. 2017",
+      "diplome": "Voyage d’Études",
       "etablissement": "",
       "mention": "",
       "details": "Canada, Guatemala, Belize, Mexique, Cuba, Colombie, Équateur",
       "taches": []
     },
     {
-      "periode": "Septembre 2015 - Juillet 2017",
+      "date_fin": "Juil. 2017",
+      "date_debut": "Sept. 2015",
       "diplome": "DUT Gestion des Entreprises et des Administrations",
       "etablissement": "Aix-Marseille Université",
       "mention": "",
@@ -144,7 +146,8 @@
       ]
     },
     {
-      "periode": "Septembre 2012 - Juillet 2015",
+      "date_fin": "Juil. 2015",
+      "date_debut": "Sept. 2012",
       "diplome": "Baccalauréat Scientifique",
       "etablissement": "Gap, France",
       "mention": "Mention Très Bien",
@@ -235,7 +238,7 @@
     },
     {
       "nom": "AutoCAD",
-      "niveau": 5,
+      "niveau": 4,
       "categorie": "CAO",
       "frequence": 3
     },
@@ -281,6 +284,6 @@
     "Licences personelles : <strong>Rhino 8</strong> + VisualARQ + LandsDesign",
     "<strong>Imprimante Multifonction A3/A4 </strong> Brother MCF-J6955DW",
     "<strong>Impression 3D : </strong> Creality CR 10S PRO",
-    "Solution cloud : <strong>Infomaniak </strong> , data centers écoresponsables et européens"
+    "Solution cloud : <strong>Infomaniak </strong>  (data centers écoresponsables et européens)"
   ]
 }
