@@ -393,6 +393,11 @@ a {
     font-weight: 500;
     letter-spacing: -0.01em;
     line-height: 1.3;
+    display: none;
+}
+
+.project-card-image {
+    margin-bottom: 0;
 }
 
 /* ==========================================

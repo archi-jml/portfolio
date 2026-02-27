@@ -1,6 +1,21 @@
 {
   "projects": [
-        {
+    {
+      "id": "14rldc",
+      "title": "Rénovation à Noailles",
+      "context": "à Marseille, 1er arrondissement (en cours)",
+      "year": "2026",
+      "shortDescription": " 90m² ",
+      "thumbnail": "images/projects/14capucins/thumb.jpg",
+      "images": [
+        "images/projects/14capucins/image0.jpg",
+        "images/projects/14capucins/salon03.png",
+        "images/projects/14capucins/chambre03.png",
+        "images/projects/14capucins/image7.jpg"
+      ],
+      "longDescription": "<p></p>"
+    },    
+    {
       "id": "BARCIFRC",
       "title": "Transformation d'une grange",
       "context": "à Barcillonette 05 (en cours)",
