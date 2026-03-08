@@ -1,16 +1,37 @@
 {
   "projects": [
     {
+      "id": "barci_retg",
+      "title": "Réhabilitation et extension",
+      "context": "à Barcillonette, 05 (en cours)",
+      "year": "2026",
+      "shortDescription": " 120m² - détails à venir",
+      "thumbnail": "images/projects/barci-rg/thumb.jpg",
+      "images": [
+        "images/projects/barci-rg/image01.jpg",
+        "images/projects/barci-rg/image02.jpg",
+        "images/projects/barci-rg/image03.jpg",
+        "images/projects/barci-rg/image04.jpg",
+        "images/projects/barci-rg/image05.jpg",
+        "images/projects/barci-rg/image06.jpg",
+        "images/projects/barci-rg/image07.jpg",
+        "images/projects/barci-rg/image08.jpg",
+        "images/projects/barci-rg/image09.jpg",
+        "images/projects/barci-rg/image10.jpg"
+      ],
+      "longDescription": "<p></p>"
+    },   
+    {
       "id": "14rldc",
       "title": "Rénovation à Noailles",
       "context": "à Marseille, 1er arrondissement (en cours)",
       "year": "2026",
-      "shortDescription": " 90m² ",
+      "shortDescription": " 90m² - détails à venir",
       "thumbnail": "images/projects/14capucins/thumb.jpg",
       "images": [
         "images/projects/14capucins/image0.jpg",
-        "images/projects/14capucins/salon03.png",
-        "images/projects/14capucins/chambre03.png",
+        "images/projects/14capucins/salon03.jpg",
+        "images/projects/14capucins/chambre03.jpg",
         "images/projects/14capucins/image7.jpg"
       ],
       "longDescription": "<p></p>"
