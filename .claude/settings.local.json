@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(head -50 \"/c/Users/Jules/Documents/GitHub/portfolio/README \\(1\\).md\")"
+    ]
+  }
+}
