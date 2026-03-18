@@ -5,13 +5,16 @@
       "title": "Réhabilitation et extension",
       "context": "à Barcillonette, 05 (en cours)",
       "year": "2026",
-      "shortDescription": " 120m² - détails à venir",
+      "surface": "120 m²",
+      "programme": "Habitat individuel",
+      "cout": "~ 180 000 €",
+      "shortDescription": "détails à venir",
       "thumbnail": "images/projects/barci-rg/thumb.jpg",
+      "phase": "DCE",
       "images": [
         "images/projects/barci-rg/image01.jpg",
         "images/projects/barci-rg/image02.jpg",
         "images/projects/barci-rg/image03.jpg",
-        "images/projects/barci-rg/image04.jpg",
         "images/projects/barci-rg/image05.jpg",
         "images/projects/barci-rg/image06.jpg",
         "images/projects/barci-rg/image07.jpg",
@@ -32,7 +35,8 @@
         "images/projects/14capucins/image0.jpg",
         "images/projects/14capucins/salon03.jpg",
         "images/projects/14capucins/chambre03.jpg",
-        "images/projects/14capucins/image7.jpg"
+        "images/projects/14capucins/image7.jpg",
+        "images/projects/14capucins/image_chantier.jpg"
       ],
       "longDescription": "<p></p>"
     },    
@@ -80,6 +84,7 @@
       "title": "Plateforme de Ré-emploi",
       "context": "Parcours Architecte-Ingénieur (PArIn)",
       "year": "2024",
+      "collaborateur": "Benjamin THEVENOT (Phitem), Paul ROUSSELY (Phitem),Antoine BRETON (ENSAG), Perrine BOUCARD (ENSAG), Zélie DELORME (ENSAG)",
       "shortDescription": "Le projet consiste en une halle multifonctionnelle conçue à partir de matériaux recyclés et réemployés. Elle a pour vocation d'accueillir une plateforme de stockage de matériaux de réemploi, un espace atelier ainsi qu'une salle de travail.",
       "thumbnail": "images/projects/parin/thumb.jpg",
       "images": [

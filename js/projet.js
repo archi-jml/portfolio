@@ -74,16 +74,6 @@ function initLightbox() {
         if (e.key === 'ArrowRight') navigateLightbox(1);
     });
 
-    // Swipe tactile (mobile)
-    let touchStartX = 0;
-    lightboxEl.addEventListener('touchstart', (e) => {
-        touchStartX = e.changedTouches[0].screenX;
-    }, { passive: true });
-
-    lightboxEl.addEventListener('touchend', (e) => {
-        const diff = touchStartX - e.changedTouches[0].screenX;
-        if (Math.abs(diff) > 50) navigateLightbox(diff > 0 ? 1 : -1);
-    }, { passive: true });
 }
 
 // ==========================================
@@ -139,6 +129,24 @@ function renderProject() {
     const hasLongDesc = currentProject.longDescription &&
         currentProject.longDescription.replace(/<[^>]*>/g, '').trim().length > 0;
 
+    const ficheFields = [
+        { label: 'Adresse',         key: 'adresse' },
+        { label: 'Programme',       key: 'programme' },
+        { label: 'Surface',         key: 'surface' },
+        { label: 'Coût',            key: 'cout' },
+        { label: 'Phase',           key: 'phase' },
+        { label: 'Livraison',       key: 'livraison' },
+        { label: "Année d'études",  key: 'annee_etudes' },
+        { label: 'Collaborateur(s)', key: 'collaborateur' },
+    ];
+
+    const ficheRows = ficheFields
+        .filter(f => currentProject[f.key] && currentProject[f.key].toString().trim() !== '')
+        .map(f => `<tr><th>${f.label}</th><td>${currentProject[f.key]}</td></tr>`)
+        .join('');
+
+    const ficheHTML = ficheRows ? `<table class="project-fiche">${ficheRows}</table>` : '';
+
     container.innerHTML = `
         <div class="container">
             <header class="project-header">
@@ -149,6 +157,7 @@ function renderProject() {
                 </div>
                 <h1 class="project-title">${currentProject.title}</h1>
                 <p class="project-short">${currentProject.shortDescription}</p>
+                ${ficheHTML}
             </header>
         </div>
         <div class="project-gallery">
@@ -219,18 +228,21 @@ function renderOtherProjects() {
 
 function initMobileMenu() {
     const burger = document.querySelector('.nav-burger');
+    const burgerWrap = document.querySelector('.nav-burger-wrap');
     const links = document.querySelector('.nav-links');
     const navLinks = document.querySelectorAll('.nav-link');
 
     if (!burger || !links) return;
 
-    burger.addEventListener('click', () => {
+    const toggleMenu = () => {
         const isExpanded = burger.getAttribute('aria-expanded') === 'true';
         burger.setAttribute('aria-expanded', !isExpanded);
         burger.classList.toggle('active');
         links.classList.toggle('active');
         document.body.style.overflow = !isExpanded ? 'hidden' : '';
-    });
+    };
+
+    (burgerWrap || burger).addEventListener('click', toggleMenu);
 
     navLinks.forEach(link => {
         link.addEventListener('click', () => {

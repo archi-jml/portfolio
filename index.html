@@ -14,7 +14,6 @@
 </head>
 
 <body>
-    <!-- Hero -->
     <section id="hero" class="hero">
         <div class="hero-content">
             <h1 class="hero-name">Jules Manucci Lasnon</h1>
@@ -26,15 +25,17 @@
         </a>
     </section>
 
-    <!-- Navigation (hidden initially, appears on scroll) -->
     <nav class="nav nav-hidden">
         <div class="nav-container">
             <a href="#hero" class="nav-logo">Jules Manucci Lasnon — Architecte D.E.</a>
-            <button class="nav-burger" aria-label="Menu" aria-expanded="false">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+            <div class="nav-burger-wrap">
+                <button class="nav-burger" aria-label="Menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <span class="nav-burger-label">Menu</span>
+            </div>
             <div class="nav-links">
                 <a href="#projets" class="nav-link">Projets</a>
                 <a href="#about" class="nav-link">Qui suis-je ?</a>
@@ -44,24 +45,19 @@
         </div>
     </nav>
 
-    <!-- Section Projets -->
     <section id="projets" class="section section-projects">
         <div class="container">
             <div class="section-header">
-                <span class="section-number"></span>
-                <h2 class="section-title">Projets</h2>
+                <h2 class="section-title">Projets & réalisations</h2>
             </div>
-            <div id="projects-grid" class="projects-grid">
-                <!-- Les projets seront chargés dynamiquement depuis projects.json -->
-            </div>
+            <div id="projects-grid" class="projects-grid"></div>
+            <a id="projects-cta" class="projects-cta" href="#">Ouvrir un projet →</a>
         </div>
     </section>
 
-    <!-- Section À propos -->
     <section id="about" class="section section-about">
         <div class="container">
             <div class="section-header">
-                <span class="section-number"></span>
                 <h2 class="section-title">Qui suis-je ?</h2>
             </div>
             <div class="about-content">
@@ -74,11 +70,7 @@
                     <p>
                         En attendant d'être habilité, j'exerce en tant qu'auto-entrepreneur et propose des prestations
                         de conception architecturale non réglementées à destination de particuliers, d'associations,
-                        d'architectes et autres professionnels du bâtiment :
-                    </p>
-                    <p>
-                        Relevé de l'existant, esquisses d'aménagement, études de faisabilité, modélisation 3D, DAO,
-                        photogrammétrie, ainsi que l'audit de déconstruction et le diagnostic de réemploi des matériaux.
+                        d'architectes et autres professionnels du bâtiment.                
                     </p>
                     <p>
                         Afin de poursuivre ma professionnalisation et contribuer activement à des projets exigeants, je
@@ -95,47 +87,35 @@
         </div>
     </section>
 
-    <!-- Section CV -->
     <section id="cv" class="section section-cv">
         <div class="container">
             <div class="section-header">
-                <span class="section-number"></span>
                 <h2 class="section-title">CV</h2>
             </div>
 
-            <!-- Info personnelle -->
             <div id="cv-info-perso" class="cv-info-perso"></div>
 
-            <!-- Grid pour Expériences et Formation -->
             <div class="cv-main-grid">
-                <!-- Expériences -->
                 <div class="cv-column">
                     <h3 class="cv-category">Expérience Professionnelle</h3>
                     <div id="cv-experiences" class="cv-list"></div>
                 </div>
-
-                <!-- Formation -->
                 <div class="cv-column">
                     <h3 class="cv-category">Formation</h3>
                     <div id="cv-formations" class="cv-list"></div>
                 </div>
             </div>
 
-            <!-- Grid pour Compétences -->
             <div class="cv-skills-grid">
-                <!-- Logiciels avec jauges -->
                 <div class="cv-column-full">
                     <h3 class="cv-category">Logiciels & Compétences Techniques</h3>
                     <div id="cv-logiciels" class="cv-skills-list"></div>
                 </div>
-
-                <!-- Langues et Intérêts -->
                 <div class="cv-secondary-grid">
                     <div class="cv-column-small">
                         <h3 class="cv-category-small">Langues</h3>
                         <div id="cv-langues" class="cv-langues-list"></div>
                     </div>
-
                     <div class="cv-column-small">
                         <h3 class="cv-category-small">Centres d'Intérêt</h3>
                         <div id="cv-interets" class="cv-interets-list"></div>
@@ -143,7 +123,6 @@
                 </div>
             </div>
 
-            <!-- Informations complémentaires -->
             <div class="cv-infos-comp">
                 <h3 class="cv-category-small">Informations complémentaires</h3>
                 <div id="cv-infos-comp" class="cv-infos-comp-list"></div>
@@ -151,11 +130,9 @@
         </div>
     </section>
 
-    <!-- Section Contact -->
     <section id="contact" class="section section-contact">
         <div class="container">
             <div class="section-header">
-                <span class="section-number"></span>
                 <h2 class="section-title">Contactez-moi</h2>
             </div>
             <div class="contact-content">
@@ -163,10 +140,6 @@
                     <div class="contact-item">
                         <span class="contact-label">Email</span>
                         <a href="mailto:j.manucci.lasnon@gmail.com">j.manucci.lasnon@gmail.com</a>
-                    </div>
-                    <div class="contact-item">
-                        <span class="contact-label">Téléphone</span>
-                        <a href="tel:+33688619936">+33 6 88 61 99 36</a>
                     </div>
                     <div class="contact-item">
                         <span class="contact-label">LinkedIn</span>
@@ -177,10 +150,9 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 Jules Manucci-Lasnon. Tous droits réservés.</p>
+            <p>&copy; 2025 Jules Manucci Lasnon. Tous droits réservés.</p>
         </div>
     </footer>
 

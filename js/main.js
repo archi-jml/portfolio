@@ -436,6 +436,10 @@ function observeSkillBars() {
 
 function displayProjects(projects) {
     const grid = document.getElementById('projects-grid');
+    const cta = document.getElementById('projects-cta');
+    if (cta && projects.length > 0) {
+        cta.href = `projet.html#${projects[0].id}`;
+    }
     grid.innerHTML = '';
 
     projects.forEach((project, index) => {
@@ -462,16 +466,16 @@ function createProjectCard(project) {
         this.src = `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='500'%3E%3Crect fill='%23e0e0dd' width='400' height='500'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='18'%3E${encodeURIComponent(project.title)}%3C/text%3E%3C/svg%3E`;
     };
 
-    imageDiv.appendChild(img);
-
-    // Titre
+    // Titre en overlay (visible sur mobile)
     const title = document.createElement('h3');
     title.className = 'project-card-title';
     title.textContent = project.title;
 
+    imageDiv.appendChild(img);
+    imageDiv.appendChild(title);
+
     // Assemblage
     card.appendChild(imageDiv);
-    card.appendChild(title);
 
     // Événement clic → navigation vers la page projet
     card.addEventListener('click', () => {
@@ -540,7 +544,9 @@ function initSmoothScroll() {
 
             if (target) {
                 e.preventDefault();
-                const offsetTop = target.offsetTop - 80;
+                const scrollTarget = target.querySelector('.section-header') || target;
+                const navHeight = document.querySelector('.nav')?.offsetHeight || 60;
+                const offsetTop = scrollTarget.offsetTop - navHeight - 16;
                 smoothScrollTo(offsetTop, 750);
             }
         });
@@ -588,13 +594,13 @@ function initStickyNav() {
 
 function initMobileMenu() {
     const burger = document.querySelector('.nav-burger');
+    const burgerWrap = document.querySelector('.nav-burger-wrap');
     const links = document.querySelector('.nav-links');
     const navLinks = document.querySelectorAll('.nav-link');
 
     if (!burger || !links) return;
 
-    // Toggle menu
-    burger.addEventListener('click', () => {
+    const toggleMenu = () => {
         const isExpanded = burger.getAttribute('aria-expanded') === 'true';
         burger.setAttribute('aria-expanded', !isExpanded);
         burger.classList.toggle('active');
@@ -606,7 +612,9 @@ function initMobileMenu() {
         } else {
             document.body.style.overflow = '';
         }
-    });
+    };
+
+    (burgerWrap || burger).addEventListener('click', toggleMenu);
 
     // Fermer le menu au clic sur un lien
     navLinks.forEach(link => {
@@ -624,6 +632,9 @@ function initMobileMenu() {
 // ==========================================
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Fix :active sur iOS Safari (nécessite un listener touch sur un ancêtre)
+    document.addEventListener('touchstart', function () {}, { passive: true });
+
     loadProjects();
     loadCV();
     initSmoothScroll();
