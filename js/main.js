@@ -461,6 +461,7 @@ function createProjectCard(project) {
 
     const img = document.createElement('img');
     img.src = project.thumbnail;
+    img.loading = 'lazy';
     img.alt = [project.title, project.context, project.programme].filter(Boolean).join(' — ');
     img.onerror = function () {
         this.src = `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='500'%3E%3Crect fill='%23e0e0dd' width='400' height='500'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='18'%3E${encodeURIComponent(project.title)}%3C/text%3E%3C/svg%3E`;
