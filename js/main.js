@@ -591,6 +591,21 @@ function initStickyNav() {
 }
 
 // ==========================================
+// COPIE EMAIL
+// ==========================================
+
+function initCopyEmail() {
+    document.querySelectorAll('.contact-copy').forEach(btn => {
+        btn.addEventListener('click', () => {
+            navigator.clipboard.writeText(btn.dataset.copy).then(() => {
+                btn.classList.add('copied');
+                setTimeout(() => btn.classList.remove('copied'), 2000);
+            });
+        });
+    });
+}
+
+// ==========================================
 // NAV ACTIVE SECTION
 // ==========================================
 
@@ -627,6 +642,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initStickyNav();
     initMobileMenu();
     observeElements();
+    initCopyEmail();
     initActiveNav();
     initScrollProgress();
     initPageTransitions();
@@ -642,8 +658,12 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
         let userScrolled = false;
         const cancelAutoScroll = () => { userScrolled = true; };
-        window.addEventListener('wheel', cancelAutoScroll, { once: true, passive: true });
-        window.addEventListener('touchstart', cancelAutoScroll, { once: true, passive: true });
+
+        // Délai avant d'écouter : évite que le touchstart de navigation annule le scroll
+        setTimeout(() => {
+            window.addEventListener('wheel', cancelAutoScroll, { once: true, passive: true });
+            window.addEventListener('touchstart', cancelAutoScroll, { once: true, passive: true });
+        }, 800);
 
         setTimeout(() => {
             if (userScrolled) return;
