@@ -5,6 +5,10 @@
 let projects = [];
 let cvData = null;
 
+function ease(t) {
+    return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+}
+
 // ==========================================
 // CHARGEMENT DES PROJETS
 // ==========================================
@@ -362,10 +366,6 @@ function animateNeedle(needle, targetAngle) {
     const duration = 1000;
     const startTime = performance.now();
 
-    function ease(t) {
-        return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
-    }
-
     function step(now) {
         const p = Math.min((now - startTime) / duration, 1);
         const cur = startAngle + (targetAngle - startAngle) * ease(p);
@@ -442,8 +442,8 @@ function displayProjects(projects) {
     }
     grid.innerHTML = '';
 
-    projects.forEach((project, index) => {
-        const card = createProjectCard(project, index);
+    projects.forEach(project => {
+        const card = createProjectCard(project);
         grid.appendChild(card);
     });
 
@@ -461,7 +461,7 @@ function createProjectCard(project) {
 
     const img = document.createElement('img');
     img.src = project.thumbnail;
-    img.alt = project.title;
+    img.alt = [project.title, project.context, project.programme].filter(Boolean).join(' — ');
     img.onerror = function () {
         this.src = `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='500'%3E%3Crect fill='%23e0e0dd' width='400' height='500'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='18'%3E${encodeURIComponent(project.title)}%3C/text%3E%3C/svg%3E`;
     };
@@ -515,10 +515,6 @@ function smoothScrollTo(targetY, duration) {
     const startY = window.scrollY;
     const distance = targetY - startY;
     let startTime = null;
-
-    function ease(t) {
-        return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
-    }
 
     function step(timestamp) {
         if (!startTime) startTime = timestamp;
@@ -589,45 +585,6 @@ function initStickyNav() {
 }
 
 // ==========================================
-// MENU MOBILE
-// ==========================================
-
-function initMobileMenu() {
-    const burger = document.querySelector('.nav-burger');
-    const burgerWrap = document.querySelector('.nav-burger-wrap');
-    const links = document.querySelector('.nav-links');
-    const navLinks = document.querySelectorAll('.nav-link');
-
-    if (!burger || !links) return;
-
-    const toggleMenu = () => {
-        const isExpanded = burger.getAttribute('aria-expanded') === 'true';
-        burger.setAttribute('aria-expanded', !isExpanded);
-        burger.classList.toggle('active');
-        links.classList.toggle('active');
-
-        // Bloquer le scroll quand le menu est ouvert
-        if (!isExpanded) {
-            document.body.style.overflow = 'hidden';
-        } else {
-            document.body.style.overflow = '';
-        }
-    };
-
-    (burgerWrap || burger).addEventListener('click', toggleMenu);
-
-    // Fermer le menu au clic sur un lien
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            burger.setAttribute('aria-expanded', 'false');
-            burger.classList.remove('active');
-            links.classList.remove('active');
-            document.body.style.overflow = '';
-        });
-    });
-}
-
-// ==========================================
 // INITIALISATION
 // ==========================================
 
@@ -641,6 +598,10 @@ document.addEventListener('DOMContentLoaded', () => {
     initStickyNav();
     initMobileMenu();
     observeElements();
+    initScrollProgress();
+    initPageTransitions();
+    initRipple();
+    initCursor();
 
     // Fondu d'entrée du hero (transition JS pour contourner prefers-reduced-motion)
     setTimeout(() => document.querySelector('.hero-name')?.classList.add('visible'), 200);

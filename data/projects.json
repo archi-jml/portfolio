@@ -8,7 +8,7 @@
       "surface": "120 m²",
       "programme": "Habitat individuel",
       "cout": "~ 180 000 €",
-      "shortDescription": "détails à venir",
+      "shortDescription": "",
       "thumbnail": "images/projects/barci-rg/thumb.jpg",
       "phase": "DCE",
       "images": [
@@ -29,7 +29,9 @@
       "title": "Rénovation à Noailles",
       "context": "à Marseille, 1er arrondissement (en cours)",
       "year": "2026",
-      "shortDescription": " 90m² - détails à venir",
+      "surface": "90 m²",
+      "programme": "Appartement en collocation",
+      "shortDescription": "",
       "thumbnail": "images/projects/14capucins/thumb.jpg",
       "images": [
         "images/projects/14capucins/image0.jpg",
@@ -45,6 +47,9 @@
       "title": "Transformation d'une grange",
       "context": "à Barcillonette 05 (en cours)",
       "year": "2026",
+      "surface": "115 m²",
+      "programme": "Habitat individuel",
+      "cout": "~ 80 000 €",
       "shortDescription": "Début de chantier très enthousiasmant à Barcillonnette (05) pour la grange de François qui voit désormais le soleil du matin traverser ses épais murs de pierre.",
       "thumbnail": "images/projects/barci-francois/thumb.jpg",
       "images": [

@@ -74,6 +74,33 @@ function initLightbox() {
         if (e.key === 'ArrowRight') navigateLightbox(1);
     });
 
+    // Swipe mobile
+    let touchStartX = 0;
+    let touchStartY = 0;
+    let isPinching = false;
+
+    lightboxEl.addEventListener('touchstart', (e) => {
+        isPinching = e.touches.length > 1;
+        if (!isPinching) {
+            touchStartX = e.touches[0].clientX;
+            touchStartY = e.touches[0].clientY;
+        }
+    }, { passive: true });
+
+    lightboxEl.addEventListener('touchmove', (e) => {
+        if (e.touches.length > 1) isPinching = true;
+    }, { passive: true });
+
+    lightboxEl.addEventListener('touchend', (e) => {
+        if (isPinching) return;
+        if ((window.visualViewport?.scale ?? 1) > 1) return;
+        const dx = e.changedTouches[0].clientX - touchStartX;
+        const dy = e.changedTouches[0].clientY - touchStartY;
+        if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) {
+            navigateLightbox(dx < 0 ? 1 : -1);
+        }
+    }, { passive: true });
+
 }
 
 // ==========================================
@@ -123,7 +150,7 @@ function renderProject() {
     const container = document.getElementById('project-page');
 
     const galleryHTML = currentProject.images.map((src, i) =>
-        `<img src="${src}" alt="${currentProject.title} — image ${i + 1}" loading="${i === 0 ? 'eager' : 'lazy'}" data-index="${i}">`
+        `<img src="${src}" alt="${[currentProject.title, currentProject.programme, currentProject.context].filter(Boolean).join(', ')} — vue ${i + 1}" loading="${i === 0 ? 'eager' : 'lazy'}" data-index="${i}">`
     ).join('');
 
     const hasLongDesc = currentProject.longDescription &&
@@ -195,7 +222,7 @@ function renderPagination() {
                 </a>` : '<div class="pagination-empty"></div>'}
                 ${next ? `
                 <a href="#${next.id}" class="pagination-link pagination-next">
-                    <span class="pagination-label">Suivant</span>
+                    <span class="pagination-label">Projet Suivant</span>
                     <span class="pagination-arrow">→</span>
                 </a>` : '<div class="pagination-empty"></div>'}
             </div>
@@ -222,37 +249,6 @@ function renderOtherProjects() {
     `).join('');
 }
 
-// ==========================================
-// MENU MOBILE
-// ==========================================
-
-function initMobileMenu() {
-    const burger = document.querySelector('.nav-burger');
-    const burgerWrap = document.querySelector('.nav-burger-wrap');
-    const links = document.querySelector('.nav-links');
-    const navLinks = document.querySelectorAll('.nav-link');
-
-    if (!burger || !links) return;
-
-    const toggleMenu = () => {
-        const isExpanded = burger.getAttribute('aria-expanded') === 'true';
-        burger.setAttribute('aria-expanded', !isExpanded);
-        burger.classList.toggle('active');
-        links.classList.toggle('active');
-        document.body.style.overflow = !isExpanded ? 'hidden' : '';
-    };
-
-    (burgerWrap || burger).addEventListener('click', toggleMenu);
-
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            burger.setAttribute('aria-expanded', 'false');
-            burger.classList.remove('active');
-            links.classList.remove('active');
-            document.body.style.overflow = '';
-        });
-    });
-}
 
 // ==========================================
 // ROUTING PAR HASH
@@ -280,6 +276,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Initialisation des composants fixes en premier
     initLightbox();
     initMobileMenu();
+    initScrollProgress();
+    initPageTransitions();
+    initRipple();
+    initCursor();
 
     const id = getIdFromHash();
     if (!id) {

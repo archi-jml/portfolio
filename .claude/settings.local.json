@@ -1,7 +1,15 @@
 {
   "permissions": {
     "allow": [
-      "Bash(head -50 \"/c/Users/Jules/Documents/GitHub/portfolio/README \\(1\\).md\")"
+      "Bash(head -50 \"/c/Users/Jules/Documents/GitHub/portfolio/README \\(1\\).md\")",
+      "Bash(find c:UsersJulesDocumentsGitHubportfolio -type f -name *.json)",
+      "Bash(start \"c:\\\\Users\\\\Jules\\\\Documents\\\\GitHub\\\\portfolio\\\\hero-sketch-test.html\")",
+      "Bash(xargs wc:*)",
+      "Bash(find c:/Users/Jules/Documents/GitHub/portfolio/images -name *.jpg -o -name *.jpeg -o -name *.png -o -name *.webp)",
+      "Bash(find c:/Users/Jules/Documents/GitHub/portfolio/images -name *.webp)",
+      "Bash(find c:/Users/Jules/Documents/GitHub/portfolio/images -name *.png)",
+      "Bash(find c:/Users/Jules/Documents/GitHub/portfolio/images -name *.jpg -o -name *.jpeg)",
+      "Bash(node -e \":*)"
     ]
   }
 }
