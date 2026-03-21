@@ -591,6 +591,29 @@ function initStickyNav() {
 }
 
 // ==========================================
+// NAV ACTIVE SECTION
+// ==========================================
+
+function initActiveNav() {
+    const links = document.querySelectorAll('.nav-link[href^="#"]');
+    const sections = [...links].map(l => document.querySelector(l.getAttribute('href'))).filter(Boolean);
+
+    const setActive = (id) => {
+        links.forEach(l => {
+            l.classList.toggle('active', l.getAttribute('href') === `#${id}`);
+        });
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) setActive(entry.target.id);
+        });
+    }, { rootMargin: '-40% 0px -55% 0px' });
+
+    sections.forEach(s => observer.observe(s));
+}
+
+// ==========================================
 // INITIALISATION
 // ==========================================
 
@@ -604,6 +627,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initStickyNav();
     initMobileMenu();
     observeElements();
+    initActiveNav();
     initScrollProgress();
     initPageTransitions();
     initRipple();
