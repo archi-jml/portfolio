@@ -16,7 +16,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Work+Sans:wght@300;400;500;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Work+Sans:wght@300;400;500;600&display=fallback"
         rel="stylesheet">
 </head>
 
@@ -24,7 +24,7 @@
     <nav class="nav nav-visible">
         <div class="nav-container">
             <a href="index.html#projets" class="nav-back">← Retour</a>
-            <a href="index.html" class="nav-logo">Jules Manucci Lasnon</a>
+            <a href="index.html" class="nav-logo"></a>
             <div class="nav-burger-wrap">
                 <button class="nav-burger" aria-label="Menu" aria-expanded="false">
                     <span></span>
@@ -44,18 +44,20 @@
 
     <!-- Contenu du projet (chargé dynamiquement) -->
     <main id="project-page" class="project-page">
+        <div class="container">
+            <div class="project-skeleton-header">
+                <div class="skeleton-block" style="width:12%;height:14px"></div>
+                <div class="skeleton-block" style="width:60%;height:48px;margin-top:1rem"></div>
+                <div class="skeleton-block" style="width:90%;height:14px;margin-top:1.5rem"></div>
+                <div class="skeleton-block" style="width:75%;height:14px"></div>
+            </div>
+        </div>
+        <div class="skeleton-gallery skeleton-block"></div>
     </main>
 
     <!-- Pagination précédent / suivant -->
     <div id="project-pagination" class="project-pagination"></div>
 
-    <!-- Autres projets -->
-    <section id="other-projects" class="other-projects">
-        <div class="container">
-            <h2 class="other-projects-title">Tous les projets :</h2>
-            <div id="other-projects-grid" class="other-projects-grid"></div>
-        </div>
-    </section>
 
     <!-- Footer -->
     <footer class="footer">

@@ -183,17 +183,11 @@ function initCursor() {
     const hoverTargets = 'a, button, [role="button"], .project-card, .lightbox-close, .lightbox-prev, .lightbox-next';
 
     document.addEventListener('mouseover', e => {
-        if (e.target.closest(hoverTargets)) {
-            dot.classList.add('is-hovering');
-            ring.classList.add('is-hovering');
-        }
+        if (e.target.closest(hoverTargets)) ring.classList.add('is-hovering');
     });
 
     document.addEventListener('mouseout', e => {
-        if (e.target.closest(hoverTargets)) {
-            dot.classList.remove('is-hovering');
-            ring.classList.remove('is-hovering');
-        }
+        if (e.target.closest(hoverTargets)) ring.classList.remove('is-hovering');
     });
 
     document.addEventListener('mouseleave', () => {

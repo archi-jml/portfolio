@@ -134,7 +134,6 @@ async function loadProject(id) {
 
         renderProject();
         renderPagination();
-        renderOtherProjects();
 
     } catch (error) {
         console.error('Erreur lors du chargement du projet:', error);
@@ -222,7 +221,7 @@ function renderPagination() {
                 </a>` : '<div class="pagination-empty"></div>'}
                 ${next ? `
                 <a href="#${next.id}" class="pagination-link pagination-next">
-                    <span class="pagination-label">Projet Suivant</span>
+                    <span class="pagination-label">Suivant</span>
                     <span class="pagination-arrow">→</span>
                 </a>` : '<div class="pagination-empty"></div>'}
             </div>
@@ -231,24 +230,6 @@ function renderPagination() {
 }
 
 // ==========================================
-// AUTRES PROJETS
-// ==========================================
-
-function renderOtherProjects() {
-    const grid = document.getElementById('other-projects-grid');
-    const others = allProjects.filter((_, i) => i !== currentProjectIndex);
-
-    grid.innerHTML = others.map(p => `
-        <a href="#${p.id}" class="other-project-card">
-            <div class="other-project-thumb">
-                <img src="${p.thumbnail}" alt="${p.title}" loading="lazy"
-                    onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22400%22%3E%3Crect fill=%22%23e0e0dd%22 width=%22400%22 height=%22400%22/%3E%3C/svg%3E'">
-            </div>
-            <p class="other-project-name">${p.title}</p>
-        </a>
-    `).join('');
-}
-
 
 // ==========================================
 // ROUTING PAR HASH

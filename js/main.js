@@ -14,6 +14,12 @@ function ease(t) {
 // ==========================================
 
 async function loadProjects() {
+    const grid = document.getElementById('projects-grid');
+    if (grid) {
+        grid.innerHTML = Array(6).fill(
+            '<article class="project-card project-card-skeleton"><div class="project-card-image"></div></article>'
+        ).join('');
+    }
     try {
         const response = await fetch('data/projects.json');
         const data = await response.json();
@@ -21,7 +27,6 @@ async function loadProjects() {
         displayProjects(projects);
     } catch (error) {
         console.error('Erreur lors du chargement des projets:', error);
-        const grid = document.getElementById('projects-grid');
         grid.innerHTML = '<p style="grid-column: 1/-1; text-align: center; color: #666;">Erreur lors du chargement des projets.</p>';
     }
 }
@@ -604,8 +609,22 @@ document.addEventListener('DOMContentLoaded', () => {
     initRipple();
     initCursor();
 
-    // Fondu d'entrée du hero (transition JS pour contourner prefers-reduced-motion)
+    // Fondu d'entrée du hero
     setTimeout(() => document.querySelector('.hero-name')?.classList.add('visible'), 200);
     setTimeout(() => document.querySelector('.hero-subtitle')?.classList.add('visible'), 550);
     setTimeout(() => document.querySelector('.hero-scroll')?.classList.add('hero-scroll-visible'), 1100);
+
+    // Auto-scroll vers les projets — annulé si l'utilisateur scroll avant
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        let userScrolled = false;
+        const cancelAutoScroll = () => { userScrolled = true; };
+        window.addEventListener('wheel', cancelAutoScroll, { once: true, passive: true });
+        window.addEventListener('touchstart', cancelAutoScroll, { once: true, passive: true });
+
+        setTimeout(() => {
+            if (userScrolled) return;
+            const projets = document.getElementById('projets');
+            if (projets) smoothScrollTo(projets.offsetTop, 1200);
+        }, 3000);
+    }
 });
