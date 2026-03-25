@@ -149,20 +149,21 @@ function renderProject() {
     const container = document.getElementById('project-page');
 
     const galleryHTML = currentProject.images.map((src, i) =>
-        `<img src="${src}" alt="${[currentProject.title, currentProject.programme, currentProject.context].filter(Boolean).join(', ')} — vue ${i + 1}" loading="${i === 0 ? 'eager' : 'lazy'}" data-index="${i}">`
+        `<img src="${src}" alt="${[currentProject.title, currentProject.programme, currentProject.lieu].filter(Boolean).join(', ')} — vue ${i + 1}" loading="${i === 0 ? 'eager' : 'lazy'}" data-index="${i}">`
     ).join('');
 
     const hasLongDesc = currentProject.longDescription &&
         currentProject.longDescription.replace(/<[^>]*>/g, '').trim().length > 0;
 
     const ficheFields = [
-        { label: 'Adresse',         key: 'adresse' },
+        { label: 'Année',           key: 'year' },
+        { label: 'Lieu',            key: 'lieu' },
+        { label: 'Statut',          key: 'statut' },
         { label: 'Programme',       key: 'programme' },
         { label: 'Surface',         key: 'surface' },
         { label: 'Coût',            key: 'cout' },
         { label: 'Phase',           key: 'phase' },
         { label: 'Livraison',       key: 'livraison' },
-        { label: "Année d'études",  key: 'annee_etudes' },
         { label: 'Collaborateur(s)', key: 'collaborateur' },
     ];
 
@@ -177,9 +178,7 @@ function renderProject() {
         <div class="container">
             <header class="project-header">
                 <div class="project-meta">
-                    <span>${currentProject.context}</span>
-                    <span>•</span>
-                    <span>${currentProject.year}</span>
+                    ${[currentProject.lieu, currentProject.statut, currentProject.year].filter(Boolean).map(v => `<span>${v}</span>`).join('<span>•</span>')}
                 </div>
                 <h1 class="project-title">${currentProject.title}</h1>
                 <p class="project-short">${currentProject.shortDescription}</p>

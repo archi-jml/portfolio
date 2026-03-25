@@ -4,15 +4,10 @@
     "date_naissance": "17 août 1997",
     "lieu_naissance": "Ventavon (05)",
     "email": "j.manucci.lasnon@gmail.com",
-    "telephone": "+33 6 88 61 99 36",
     "adresses": [
       {
-        "label": "Adresse principale",
-        "valeur": "998 Route de Laragne, 05300 VENTAVON"
-      },
-      {
-        "label": "Adresse secondaire",
-        "valeur": "14 Rue Longue des Capucins, 13001 MARSEILLE"
+        "label": "Localisation",
+        "valeur": "Hautes-Alpes (05300) et Marseille (13001)"
       }
     ],
     "equipement": ""
@@ -26,9 +21,7 @@
       "lieu": "",
       "description": " ",
       "taches": [
-        "PC",
-        "DCE",
-        "Suivi de chantier",
+        "PC, DCE, chantier",
         "Accompagnement à l’autoconstruction",
         "Infographie"
       ]
@@ -41,9 +34,9 @@
       "lieu": "Dhamma Mahi, Yonne",
       "description": " ",
       "taches": [
-        "Suivi urbanisme (nouveau PLU)",
+        "Suivi urbanisme",
         "ESQ + APS",
-        "Coordination projets"
+        "Coordination de projet"
       ]
     },
     {
@@ -55,8 +48,7 @@
       "description": "Stage sous la direction de Pascal Thomas",
       "taches": [
         "Etudes de Diagnostic et de Faisabilité",
-        "Conception collaborative",
-        "Workshops usagers"
+        "Conception collaborative, workshop usagers"
       ]
     },
     {
@@ -69,7 +61,7 @@
       "taches": [
         "Humanitarian Architecture (Sindh Floods Rehabilitation)",
         "Woman-empowerment (Yasmeen Lari’s Pakistani Chulah)",
-        "0 Carbon (SfAip)",
+        "0 Carbon Architecture (SfAip)",
         "Heritage conservation (Denso Hall Rahguzar Projects)"
       ]
     },
@@ -79,9 +71,9 @@
       "poste": "",
       "entreprise": "Nizar Hadad Architecte",
       "lieu": "Baskinta, Liban",
-      "description": "Stage sous la direction de Nizar Hadad - Projet \"LifeHaus\" : prototype de maison semi-enterrée inspirée des Earthships",
+      "description": "Stage sous la direction de Nizar Hadad ",
       "taches": [
-        " Suivi de chantier"
+      "Suivi de chantier du projet \"LifeHaus\" : prototype de maison semi-enterrée inspirée des Earthships"
       ]
     },
     {
@@ -239,12 +231,6 @@
       "frequence": 3
     },
     {
-      "nom": "AutoCAD",
-      "niveau": 4,
-      "categorie": "CAO",
-      "frequence": 3
-    },
-    {
       "nom": "QGIS",
       "niveau": 3,
       "categorie": "SIG",
@@ -270,15 +256,27 @@
       "categorie": "Analyse Climatique",
       "note": "Connaissance",
       "frequence": 5
+    },
+    {
+      "nom": "AutoCAD",
+      "niveau": 1,
+      "categorie": "Bases",
+      "note": "Bases",
+      "frequence": 1
+    },
+    {
+      "nom": "Revit",
+      "niveau": 1,
+      "categorie": "Bases",
+      "note": "Bases",
+      "frequence": 1
     }
   ],
   "interets": [
     "Méditation",
     "Voyages",
     "Philosophie",
-    "Ski de randonnée",
-    "Trekking",
-    "Bikepaking"
+    "Sports de pleine nature"
   ],
   "infos_complementaires": [
     "<strong>Véhiculé</strong>",

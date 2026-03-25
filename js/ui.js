@@ -10,6 +10,7 @@ function initMobileMenu() {
 
     if (!burger || !links) return;
 
+    const burgerLabel = document.querySelector('.nav-burger-label');
     const focusableSelectors = 'a[href], button:not([disabled])';
 
     const openMenu = () => {
@@ -17,6 +18,7 @@ function initMobileMenu() {
         burger.classList.add('active');
         links.classList.add('active');
         document.body.style.overflow = 'hidden';
+        if (burgerLabel) burgerLabel.textContent = 'Fermer';
         setTimeout(() => {
             const first = links.querySelector(focusableSelectors);
             if (first) first.focus();
@@ -28,6 +30,10 @@ function initMobileMenu() {
         burger.classList.remove('active');
         links.classList.remove('active');
         document.body.style.overflow = '';
+        if (burgerLabel) {
+            const activeLink = document.querySelector('.nav-link.active');
+            burgerLabel.textContent = activeLink ? activeLink.textContent : 'Menu';
+        }
         burger.focus();
     };
 

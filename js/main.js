@@ -82,15 +82,16 @@ function displayInfoPerso(info) {
     if (info.titre) {
         html += `<p class="cv-info-perso-titre">${info.titre}</p>`;
     }
-    html += `<p class="cv-info-perso-birth">Né le ${info.date_naissance} à ${info.lieu_naissance}</p>`;
+    const naissance = new Date(1997, 7, 17); // 17 août 1997
+    const aujourd_hui = new Date();
+    let age = aujourd_hui.getFullYear() - naissance.getFullYear();
+    if (aujourd_hui < new Date(aujourd_hui.getFullYear(), naissance.getMonth(), naissance.getDate())) age--;
+    html += `<p class="cv-info-perso-birth">Né en 1997 · ${age} ans</p>`;
     html += '</div>';
 
     html += '<div class="cv-info-perso-contact">';
     if (info.email) {
         html += `<p class="cv-info-perso-line"><span class="cv-info-perso-label">Email</span><a href="mailto:${info.email}">${info.email}</a></p>`;
-    }
-    if (info.telephone) {
-        html += `<p class="cv-info-perso-line"><span class="cv-info-perso-label">Tél.</span><a href="tel:${info.telephone.replace(/\s/g, '')}">${info.telephone}</a></p>`;
     }
     html += '</div>';
 
@@ -467,7 +468,7 @@ function createProjectCard(project) {
     const img = document.createElement('img');
     img.src = project.thumbnail;
     img.loading = 'lazy';
-    img.alt = [project.title, project.context, project.programme].filter(Boolean).join(' — ');
+    img.alt = [project.title, project.lieu, project.programme].filter(Boolean).join(' — ');
     img.onerror = function () {
         this.src = `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='500'%3E%3Crect fill='%23e0e0dd' width='400' height='500'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='18'%3E${encodeURIComponent(project.title)}%3C/text%3E%3C/svg%3E`;
     };
@@ -546,9 +547,9 @@ function initSmoothScroll() {
 
             if (target) {
                 e.preventDefault();
-                const scrollTarget = target.querySelector('.section-header') || target;
+                const scrollTarget = target.querySelector('.container') || target;
                 const navHeight = document.querySelector('.nav')?.offsetHeight || 60;
-                const offsetTop = scrollTarget.offsetTop - navHeight - 16;
+                const offsetTop = scrollTarget.getBoundingClientRect().top + window.scrollY - navHeight - 16;
                 smoothScrollTo(offsetTop, 750);
             }
         });
@@ -613,10 +614,17 @@ function initActiveNav() {
     const links = document.querySelectorAll('.nav-link[href^="#"]');
     const sections = [...links].map(l => document.querySelector(l.getAttribute('href'))).filter(Boolean);
 
+    const burgerLabel = document.querySelector('.nav-burger-label');
+    const burger = document.querySelector('.nav-burger');
+
     const setActive = (id) => {
         links.forEach(l => {
             l.classList.toggle('active', l.getAttribute('href') === `#${id}`);
         });
+        if (burgerLabel && burger?.getAttribute('aria-expanded') !== 'true') {
+            const activeLink = [...links].find(l => l.getAttribute('href') === `#${id}`);
+            burgerLabel.textContent = activeLink ? activeLink.textContent : 'Menu';
+        }
     };
 
     const observer = new IntersectionObserver((entries) => {
@@ -654,12 +662,14 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => document.querySelector('.hero-subtitle')?.classList.add('visible'), 550);
     setTimeout(() => document.querySelector('.hero-scroll')?.classList.add('hero-scroll-visible'), 1100);
 
-    // Auto-scroll vers les projets — annulé si l'utilisateur scroll avant
-    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    // Auto-scroll vers les projets — uniquement à la première arrivée sur le site
+    const fromInternalPage = document.referrer && document.referrer.includes(location.hostname);
+    const isBackForward = performance.getEntriesByType('navigation')[0]?.type === 'back_forward';
+
+    if (!fromInternalPage && !isBackForward && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
         let userScrolled = false;
         const cancelAutoScroll = () => { userScrolled = true; };
 
-        // Délai avant d'écouter : évite que le touchstart de navigation annule le scroll
         setTimeout(() => {
             window.addEventListener('wheel', cancelAutoScroll, { once: true, passive: true });
             window.addEventListener('touchstart', cancelAutoScroll, { once: true, passive: true });

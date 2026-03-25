@@ -3,8 +3,9 @@
     {
       "id": "barci_retg",
       "title": "Réhabilitation et extension",
-      "context": "à Barcillonette, 05 (en cours)",
       "year": "2026",
+      "lieu": "Barcillonette (05)",
+      "statut": "En cours",
       "surface": "120 m²",
       "programme": "Habitat individuel",
       "cout": "~ 180 000 €",
@@ -23,14 +24,16 @@
         "images/projects/barci-rg/image10.jpg"
       ],
       "longDescription": "<p></p>"
-    },   
+    },
     {
       "id": "14rldc",
       "title": "Rénovation à Noailles",
-      "context": "à Marseille, 1er arrondissement (en cours)",
       "year": "2026",
+      "lieu": "Marseille, 1er arrondissement",
+      "statut": "En cours",
       "surface": "90 m²",
       "programme": "Appartement en collocation",
+      "cout": "~ 50 000 €",
       "shortDescription": "",
       "thumbnail": "images/projects/14capucins/thumb.jpg",
       "images": [
@@ -41,12 +44,13 @@
         "images/projects/14capucins/image_chantier.jpg"
       ],
       "longDescription": "<p></p>"
-    },    
+    },
     {
       "id": "BARCIFRC",
       "title": "Transformation d'une grange",
-      "context": "à Barcillonette 05 (en cours)",
       "year": "2026",
+      "lieu": "Barcillonette (05)",
+      "statut": "En cours",
       "surface": "115 m²",
       "programme": "Habitat individuel",
       "cout": "~ 80 000 €",
@@ -63,9 +67,10 @@
     {
       "id": "PFE",
       "title": "Restauration d'une ruine",
-      "context": "en Crète, Projet de Fin d'Etudes",
       "year": "2025",
-      "shortDescription": "Une ruine nichée dans les collines fertiles de l’arrière-pays crétois devient le support d’un habitat poétique où l’architecture se pense comme médiatrice entre le monde et ceux qui y vivent.",
+      "lieu": "Crète, Grèce",
+      "statut": "Projet de Fin d'Etudes (PFE)",
+      "shortDescription": "Une ruine nichée dans les collines fertiles de l'arrière-pays crétois devient le support d'un habitat poétique où l'architecture se pense comme médiatrice entre le monde et ceux qui y vivent.",
       "thumbnail": "images/projects/PFE/thumb.png",
       "images": [
         "images/projects/PFE/image2.png",
@@ -82,13 +87,14 @@
         "images/projects/PFE/image11.png",
         "images/projects/PFE/image12.png"
       ],
-      "longDescription": "<p> <a href=\"https://drive.google.com/file/d/1KbGdpDqL79IR7HL6jgwVkTfya9siqG1o/view?usp=drive_link\" target=\"_blank\">Lien vers la notice du projet</a> </p> <p>Dans un contexte où la Crète est dépossédée par les logiques du tourisme de masse, ce projet soutient une posture alternative, miltant pour un ancrage situé, pour une réactivation des communs et pour une hospitalité qui ne soit pas consommation. <p> Une première dynamique est insufflée par la réactivation des anciennes meules de l'huilerie au travers d’un pressoir communautaire. </p><p>Elle se prolonge ensuite par une stratégie de chantier ouverte, où le bâtir devient lui-même une manière d'habiter et une opportunité de transmission. La cour principale, repavée en galets selon les traces anciennes de calades, devient une scène à ciel ouvert, un théâtre quotidien où se croisent habitants, visiteurs, célébrations et silences. La bibliothèque, pensée comme un refuge sensoriel, offre un espace de retrait et de connaissance. Sa lumière zénithale, ses murs épais prolongés en banquettes de pierre en font une alcôve pour l’esprit, ouverte sur les chants d’oiseaux et les bruissements du ruisseau. Finalement, l’étage d’habitation avec sa grande terrasse ombragée, suspendue entre la cour et le paysage, est pensé comme le support des usages collectifs : la terrasse accueille les grandes tablées, les ateliers, les discussions à l’ombre d’un arbre qui traverse les travées de l’huilerie. Sa toiture légère, fine, posée en tension entre les murs massifs, supporte l’habitant entre la terre et le ciel.</p>"
+      "longDescription": "<p> <a href=\"https://drive.google.com/file/d/1KbGdpDqL79IR7HL6jgwVkTfya9siqG1o/view?usp=drive_link\" target=\"_blank\">Lien vers la notice du projet</a> </p> <p>Dans un contexte où la Crète est dépossédée par les logiques du tourisme de masse, ce projet soutient une posture alternative, miltant pour un ancrage situé, pour une réactivation des communs et pour une hospitalité qui ne soit pas consommation. <p> Une première dynamique est insufflée par la réactivation des anciennes meules de l'huilerie au travers d'un pressoir communautaire. </p><p>Elle se prolonge ensuite par une stratégie de chantier ouverte, où le bâtir devient lui-même une manière d'habiter et une opportunité de transmission. La cour principale, repavée en galets selon les traces anciennes de calades, devient une scène à ciel ouvert, un théâtre quotidien où se croisent habitants, visiteurs, célébrations et silences. La bibliothèque, pensée comme un refuge sensoriel, offre un espace de retrait et de connaissance. Sa lumière zénithale, ses murs épais prolongés en banquettes de pierre en font une alcôve pour l'esprit, ouverte sur les chants d'oiseaux et les bruissements du ruisseau. Finalement, l'étage d'habitation avec sa grande terrasse ombragée, suspendue entre la cour et le paysage, est pensé comme le support des usages collectifs : la terrasse accueille les grandes tablées, les ateliers, les discussions à l'ombre d'un arbre qui traverse les travées de l'huilerie. Sa toiture légère, fine, posée en tension entre les murs massifs, supporte l'habitant entre la terre et le ciel.</p>"
     },
     {
       "id": "PARIN",
       "title": "Plateforme de Ré-emploi",
-      "context": "Parcours Architecte-Ingénieur (PArIn)",
       "year": "2024",
+      "lieu": "Grenoble (Campus)",
+      "statut": "Projet PArIn",
       "collaborateur": "Benjamin THEVENOT (Phitem), Paul ROUSSELY (Phitem),Antoine BRETON (ENSAG), Perrine BOUCARD (ENSAG), Zélie DELORME (ENSAG)",
       "shortDescription": "Le projet consiste en une halle multifonctionnelle conçue à partir de matériaux recyclés et réemployés. Elle a pour vocation d'accueillir une plateforme de stockage de matériaux de réemploi, un espace atelier ainsi qu'une salle de travail.",
       "thumbnail": "images/projects/parin/thumb.jpg",
@@ -101,13 +107,14 @@
         "images/projects/parin/image6.jpg",
         "images/projects/parin/image7.png"
       ],
-      "longDescription": "<p>Surface : 700m² ; Part de matériaux réemployés : 58% du volume.  La halle abrite un espace de stockage pour des matériaux de réemploi et un grand espace public multi-fonctionnel. Celui-ci peut être utilisé comme atelier, halle de marché, mais il pourrait également accueillir des événements étudiants. La structure principale de la halle est réalisée grâce à des portiques métalliques réemployés. Sur deux des façades, elle supporte des panneaux composés de persiennes en bois. La couverture de la structure principale est faite de tôles ondulées et de verre afin d’apporter de la lumière. Une structure secondaire bois/paille et deux conteneurs viennent se glisser sous la structure principale pour accueillir un espace intérieur de travail et un lieu de stockage des outils.</p>"
+      "longDescription": "<p>Surface : 700m² ; Part de matériaux réemployés : 58% du volume.  La halle abrite un espace de stockage pour des matériaux de réemploi et un grand espace public multi-fonctionnel. Celui-ci peut être utilisé comme atelier, halle de marché, mais il pourrait également accueillir des événements étudiants. La structure principale de la halle est réalisée grâce à des portiques métalliques réemployés. Sur deux des façades, elle supporte des panneaux composés de persiennes en bois. La couverture de la structure principale est faite de tôles ondulées et de verre afin d'apporter de la lumière. Une structure secondaire bois/paille et deux conteneurs viennent se glisser sous la structure principale pour accueillir un espace intérieur de travail et un lieu de stockage des outils.</p>"
     },
     {
       "id": "KAUNAS",
       "title": "Hameaux urbains",
-      "context": "Kaunas, Lituanie, projet de master",
       "year": "2024",
+      "lieu": "Kaunas, Lituanie",
+      "statut": "Projet de master",
       "shortDescription": "Un archipel urbains flottant sur une mer de végétation propose une nouvelle vision de la vie urbaine contemporaine à Kaunas",
       "thumbnail": "images/projects/kaunas/thumb.jpg",
       "images": [
@@ -124,11 +131,13 @@
       ],
       "longDescription": "<p> </p>"
     },
-     {
+    {
       "id": "STMARCELIN",
       "title": "Logement social écologique",
-      "context": "St Marcelin (38), projet de master",
       "year": "2024",
+      "lieu": "Saint-Marcellin (38)",
+      "programme": "Logement collectif",
+      "statut": "Projet de master",
       "shortDescription": "Requalification du quartier de Beausoleil et ses environ pour une nouvelle polarité accueillante en entrée de ville",
       "thumbnail": "images/projects/stmarcelin/thumb.png",
       "images": [
@@ -144,8 +153,9 @@
     {
       "id": "ISTANBUL",
       "title": "Centre de méditation",
-      "context": "Istanbul, projet de licence",
       "year": "2021",
+      "lieu": "Istanbul, Turquie",
+      "statut": "Projet de licence",
       "shortDescription": "Fondu dans la forêt de Belgrad, près d'Istanbul, ce centre s'organise autour d'une salle de méditation construite en pont sur la rivière.",
       "thumbnail": "images/projects/istanbul/thumb.png",
       "images": [
@@ -161,8 +171,9 @@
     {
       "id": "KILIS",
       "title": "Centre communautaire dans un camp de réfugiés",
-      "context": "Kilis refugee camp,Turquie, projet de licence, MSGU",
       "year": "2021",
+      "lieu": "Kilis, Turquie",
+      "statut": "Projet de licence",
       "shortDescription": "A la frontière syrienne, centre communautaire dans un camps de réfugiés existant",
       "thumbnail": "images/projects/kilis/thumb.png",
       "images": [
@@ -176,8 +187,9 @@
     {
       "id": "GRE",
       "title": "Résidences étudiantes",
-      "context": "Grenoble, projet de licence",
       "year": "2019",
+      "lieu": "Grenoble",
+      "statut": "Projet de licence",
       "shortDescription": "A Grenoble, résidences étudiantes sur la base de grandes collocations proposant une gradation d'espaces et d'usages.",
       "thumbnail": "images/projects/grenoble_residences/thumb.png",
       "images": [
@@ -192,9 +204,10 @@
     {
       "id": "NOUZ",
       "title": "Réhabilitation d'une friche industrielle",
-      "context": "Nouzonville (08), projet de master",
       "year": "2023",
-      "shortDescription": "Dans les Ardennes, à Nouzonville, les défis tels que les friches en cœur d’agglomération et la division créée par le chemin de fer, sont abordés comme des atouts permettant de réinventer l’espace autour d’une mosaïque d’ambiances urbaines et naturelles.",
+      "lieu": "Nouzonville (08)",
+      "statut": "Projet de master",
+      "shortDescription": "Dans les Ardennes, à Nouzonville, les défis tels que les friches en cœur d'agglomération et la division créée par le chemin de fer, sont abordés comme des atouts permettant de réinventer l'espace autour d'une mosaïque d'ambiances urbaines et naturelles.",
       "thumbnail": "images/projects/nouzonville/thumb.png",
       "images": [
         "images/projects/nouzonville/image1.png",

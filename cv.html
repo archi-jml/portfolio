@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CV — Jules Manucci Lasnon</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ── Reset ─────────────────────────────────────────────── */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* Force l'impression des couleurs de fond */
+@media print {
+    * {
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+    }
+}
+
+:root {
+    --accent:  #b8866f;
+    --text:    #1a1a1a;
+    --light:   #666;
+    --border:  #d8d8d4;
+}
+
+/* ── Écran ──────────────────────────────────────────────── */
+@media screen {
+    body {
+        background: #e8e7e4;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 24px 16px 48px;
+    }
+
+    .print-bar {
+        width: 210mm;
+        max-width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 12px;
+    }
+
+    .print-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        border: 1px solid var(--text);
+        background: transparent;
+        color: var(--text);
+        padding: 7px 18px;
+        font-family: 'Work Sans', sans-serif;
+        font-size: 11px;
+        font-weight: 400;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: background 0.2s, color 0.2s;
+    }
+
+    .print-btn:hover { background: var(--text); color: #fafaf8; }
+
+    .back-link {
+        font-family: 'Work Sans', sans-serif;
+        font-size: 11px;
+        font-weight: 300;
+        color: var(--light);
+        letter-spacing: 0.05em;
+        text-decoration: none;
+        transition: color 0.2s;
+    }
+
+    .back-link:hover { color: var(--text); }
+
+    .page {
+        width: 210mm;
+        min-height: 297mm;
+        max-width: 100%;
+        background: white;
+        box-shadow: 0 2px 24px rgba(0,0,0,0.12);
+        padding: 13mm 14mm 11mm 14mm;
+    }
+}
+
+/* ── Impression ─────────────────────────────────────────── */
+@media print {
+    @page {
+        size: A4 portrait;
+        margin: 0;
+    }
+
+    body { background: white; }
+    .print-bar { display: none; }
+
+    .page {
+        width: 210mm;
+        height: 297mm;
+        padding: 13mm 14mm 11mm 14mm;
+        overflow: hidden;
+        box-shadow: none;
+    }
+}
+
+/* ── Commun ─────────────────────────────────────────────── */
+body {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 300;
+    font-size: 7.8pt;
+    line-height: 1.48;
+    color: var(--text);
+}
+
+/* ── Header ── */
+.header {
+    display: flex;
+    align-items: center;
+    gap: 5mm;
+    margin-bottom: 5mm;
+    padding-bottom: 4mm;
+}
+
+.header-qr {
+    width: 14mm;
+    height: 14mm;
+    flex-shrink: 0;
+    opacity: 0.65;
+    image-rendering: pixelated;
+    align-self: stretch;
+    object-fit: contain;
+    object-position: top;
+}
+
+.header-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.header-top-row {
+    display: flex;
+    align-items: baseline;
+    gap: 5mm;
+}
+
+.header-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 13pt;
+    font-weight: 500;
+    letter-spacing: 0.10em;
+    line-height: 1.05;
+    color: var(--text);
+}
+
+.header-title {
+    font-size: 7pt;
+    font-weight: 300;
+    color: var(--accent);
+    letter-spacing: 0.40em;
+    text-transform: uppercase;
+}
+
+.header-contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8mm 10mm;
+}
+
+.header-contact-item {
+    font-size: 7.2pt;
+    color: var(--light);
+    display: flex;
+    align-items: center;
+    gap: 1.5mm;
+}
+
+
+/* ── Layout 2 colonnes ── */
+.main-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 7mm;
+    margin-bottom: 5mm;
+}
+
+/* ── Sections ── */
+.section { margin-bottom: 5mm; }
+
+.section-title {
+    font-size: 6.5pt;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border-bottom: 0.75px solid var(--border);
+    padding-bottom: 1mm;
+    margin-bottom: 3mm;
+}
+
+/* ── Items ── */
+.item { margin-bottom: 3mm; }
+
+.item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 3mm;
+}
+
+.item-left { flex: 1; }
+
+.item-title {
+    display: block;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 10pt;
+    font-weight: 500;
+    line-height: 1.15;
+}
+
+.item-sub {
+    display: block;
+    font-size: 7.2pt;
+    font-weight: 400;
+    margin-top: 0.4mm;
+}
+
+.item-detail {
+    display: block;
+    font-size: 6.8pt;
+    color: var(--light);
+    margin-top: 0.4mm;
+}
+
+.item-detail.italic { font-style: italic; }
+
+.item-mention {
+    display: inline-block;
+    font-size: 6.8pt;
+    color: var(--accent);
+    font-weight: 500;
+    margin-top: 0.5mm;
+    letter-spacing: 0.05em;
+}
+
+.item-date {
+    font-size: 6.8pt;
+    color: var(--light);
+    white-space: nowrap;
+    flex-shrink: 0;
+    text-align: right;
+}
+
+.taches {
+    margin-top: 1mm;
+    margin-left: 3mm;
+    list-style: none;
+}
+
+.taches li {
+    font-size: 7.2pt;
+    line-height: 1.5;
+    padding-left: 3mm;
+    position: relative;
+}
+
+.taches li::before {
+    content: '—';
+    position: absolute;
+    left: -3mm;
+    color: var(--accent);
+    font-size: 6.5pt;
+}
+
+/* ── Skills ── */
+.skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 2.5mm 6mm;
+    margin-bottom: 5mm;
+}
+
+.skill-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1mm;
+    margin-bottom: 1mm;
+}
+
+.skill-name {
+    font-size: 7.2pt;
+    font-weight: 400;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex-shrink: 1;
+    min-width: 0;
+}
+
+.skill-cat {
+    font-size: 6pt;
+    color: var(--light);
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.skill-bar-bg {
+    height: 3px;
+    background: #e2e2de;
+    border-radius: 2px;
+    overflow: hidden;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+}
+
+.skill-bar-fill {
+    height: 3px;
+    background: var(--accent);
+    border-radius: 2px;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+}
+
+/* ── Bottom grid ── */
+.bottom-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 7mm;
+}
+
+/* ── Langues ── */
+.langue-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.8mm;
+    padding-bottom: 1.2mm;
+    border-bottom: 0.5px solid var(--border);
+}
+
+.langue-nom  { font-size: 7.8pt; font-weight: 400; }
+.langue-niveau { font-size: 6.8pt; color: var(--light); }
+
+/* ── Intérêts ── */
+.interets-wrap { display: flex; flex-wrap: wrap; gap: 1.5mm; }
+
+.interet-tag {
+    font-size: 6.8pt;
+    color: var(--light);
+    border: 0.5px solid var(--border);
+    padding: 0.6mm 2mm;
+    border-radius: 0.5mm;
+}
+
+/* ── Infos comp ── */
+.infos-comp-list {
+    list-style: none;
+    column-count: 2;
+    column-gap: 4mm;
+}
+
+.infos-comp-list li {
+    font-size: 7.2pt;
+    color: var(--light);
+    line-height: 1.5;
+    padding-left: 2.5mm;
+    margin-bottom: 1mm;
+    position: relative;
+}
+
+.infos-comp-list li::before {
+    content: '·';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+}
+</style>
+</head>
+<body>
+
+<div class="print-bar">
+    <a href="index.html#about" class="back-link">← Retour au portfolio</a>
+    <button class="print-btn" onclick="window.print()">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <path d="M12 3v13M7 11l5 5 5-5"/><path d="M3 19h18"/>
+        </svg>
+        Télécharger / Imprimer
+    </button>
+</div>
+
+<div class="page" id="cv-page"></div>
+
+<script>
+async function loadAndRender() {
+    const cv = await fetch('data/cv.json').then(r => r.json());
+
+    function esc(s) { return s || ''; }
+
+    function taches(list) {
+        if (!list || !list.length) return '';
+        return `<ul class="taches">${list.map(t => `<li>${t}</li>`).join('')}</ul>`;
+    }
+
+    function experiences(items) {
+        return items.map(e => `
+            <div class="item">
+                <div class="item-header">
+                    <div class="item-left">
+                        <span class="item-title">${esc(e.entreprise)}</span>
+                        ${e.poste && e.poste.trim() ? `<span class="item-sub">${e.poste}</span>` : ''}
+                        ${e.lieu ? `<span class="item-detail">${e.lieu}</span>` : ''}
+                        ${e.description && e.description.trim() ? `<span class="item-detail italic">${e.description}</span>` : ''}
+                    </div>
+                    <span class="item-date">${e.date_debut} — ${e.date_fin}</span>
+                </div>
+                ${taches(e.taches)}
+            </div>`).join('');
+    }
+
+    function formations(items) {
+        return items.map(f => `
+            <div class="item">
+                <div class="item-header">
+                    <div class="item-left">
+                        <span class="item-title">${esc(f.diplome)}</span>
+                        ${f.etablissement ? `<span class="item-sub">${f.etablissement}</span>` : ''}
+                        ${f.details ? `<span class="item-detail">${f.details}</span>` : ''}
+                        ${f.mention ? `<span class="item-mention">${f.mention}</span>` : ''}
+                    </div>
+                    <span class="item-date">${f.date_debut} — ${f.date_fin}</span>
+                </div>
+                ${taches(f.taches)}
+            </div>`).join('');
+    }
+
+    function logiciels(items) {
+        return [...items]
+            .sort((a, b) => (b.frequence || 0) - (a.frequence || 0))
+            .slice(0, 12)
+            .map(l => `
+            <div class="skill-item">
+                <div class="skill-header">
+                    <span class="skill-name">${l.nom}</span>
+                    <span class="skill-cat">${l.categorie}</span>
+                </div>
+                <div class="skill-bar-bg">
+                    <div class="skill-bar-fill" style="width:${Math.round(l.niveau * 10)}%"></div>
+                </div>
+            </div>`).join('');
+    }
+
+    document.getElementById('cv-page').innerHTML = `
+        <header class="header">
+            <img class="header-qr" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAYAAACtWK6eAAAAAklEQVR4AewaftIAAATeSURBVO3B0ZEdh5VEwcMb40X5b1rZwWWsflUNRVNvAEIn848//4Kkf+uQNB2SpkPSdEiaDknTIWk6JE1f/EASfidteSsJS1uWJDxpy1tJWNqyJOFJW5Yk/E7ashySpkPSdEiaDknTIWk6JE1f/A1t+dUk4WdIwtKWJ0l4qy1LEpa2fEpbfjVJeOOQNB2SpkPSdEiaDknTIWk6JE1ffFASPqEtn5CEn6Etn9CWJQlP2vIJSfiEtnzCIWk6JE2HpOmQNB2SpkPS9IX+K9ryq0nC0hb92CFpOiRNh6TpkDQdkqZD0nRImr7QxyXhSVuWJDxpy9KWJQlP2iI4JE2HpOmQNB2SpkPSdEiavvigtvyvSMJbSXgrCW+05Wdoyz/JIWk6JE2HpOmQNB2SpkPS9MXfkIT/JW1ZkrC05UkSlrY8ScLSliUJT9ryVhJ+F4ek6ZA0HZKmQ9J0SJoOSdMhafriB9qif0nC0pZPSMKTtny3tvyvOCRNh6TpkDQdkqZD0nRImr74gSQsbXmShF9NW5a2/Gra8iQJS1uWtryVhF9NWz7hkDQdkqZD0nRImg5J0yFpOiRNX/xAW5YkvNWWnyEJS1ueJGFpy8/Qlk9IwtKWJ0lY2vIJSXjSljcOSdMhaTokTYek6ZA0HZKmP/78Cw+SsLTlSRJ+J215IwlP2vIJSVja8lYS3mrLkoQnbVmS8FZblkPSdEiaDknTIWk6JE2HpOmPP//CgyS81Za3krC05a0kfLe2fEoSlrboX5KwtGU5JE2HpOmQNB2SpkPSdEiaDknTF39DWz6lLUsSfoa2vJGEJ215qy2fkIS32rIkYWnLkyR8t0PSdEiaDknTIWk6JE2HpOmLD0rC0pZPaMunJGFpy9KWJ0n4hLYsSXjSlreSsLRlScKTtixJeNKWNw5J0yFpOiRNh6TpkDQdkqZD0vTFB7XluyXhSVuWJDxpy5KEpS1P2rIk4a0kfEIS3krCz5CEpS3LIWk6JE2HpOmQNB2SpkPS9MVPkoQnbXmjLU+S8KtJwlttWZLwVhKWtjxJwhtteastT5LwxiFpOiRNh6TpkDQdkqZD0vTFLyoJbyThU5KwtOUT2vIkCUtbliS8lYSfIQlLW5605Y1D0nRImg5J0yFpOiRNh6TpkDT98edf0P9LwpO2/JMk4a22fEIS3mrLdzskTYek6ZA0HZKmQ9J0SJq++IEk/E7asrTlSRK+W1veasuShLeS8KQtb7TlSRI+oS3LIWk6JE2HpOmQNB2SpkPSdEiavvgb2vKrScJbSXjSliUJb7XlrSR8t7Z8QhKetOW7HZKmQ9J0SJoOSdMhaTokTV98UBI+oS2/mrYsSfiUtixJeCsJ360tT5KwtOVJEpa2LIek6ZA0HZKmQ9J0SJoOSdMX+o8lYWnL0pYnSfiEtryVhLfasiRhScJbSfiEQ9J0SJoOSdMhaTokTYek6ZA0faH/iiQsbXnSliUJbyXhrbZ8QluWJLzVlidJeOOQNB2SpkPSdEiaDknTIWn64oPa8k/SlreS8FYS3mrLkoSfIQmf0JbvdkiaDknTIWk6JE2HpOmQNB2Spi/+hiT8TpLwpC3frS1PkrC05ROS8DMk4bsdkqZD0nRImg5J0yFpOiRNf/z5FyT9W4ek6ZA0HZKmQ9J0SJoOSdP/AciInM0QD5OjAAAAAElFTkSuQmCC" alt="QR code archi-j.fr">
+            <div class="header-info">
+                <div class="header-top-row">
+                    <div class="header-name">${cv.info_perso.nom}</div>
+                    <div class="header-title">Architecte D.E.</div>
+                </div>
+                <div class="header-contact">
+                    <span class="header-contact-item">${cv.info_perso.email}</span>
+                    ${cv.info_perso.adresses.map(a => `<span class="header-contact-item">${a.valeur}</span>`).join('')}
+                    <span class="header-contact-item">Né le ${cv.info_perso.date_naissance}</span>
+                    <span class="header-contact-item">www.archi-j.fr</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="main-grid">
+            <div class="section">
+                <div class="section-title">Expérience Professionnelle</div>
+                ${experiences(cv.experiences)}
+            </div>
+            <div class="section">
+                <div class="section-title">Formation</div>
+                ${formations(cv.formations)}
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Logiciels & Compétences Techniques</div>
+            <div class="skills-grid">${logiciels(cv.logiciels)}</div>
+        </div>
+
+        <div class="bottom-grid">
+            <div class="section" style="margin-bottom:0">
+                <div class="section-title">Langues</div>
+                ${cv.langues.map(l => `
+                    <div class="langue-item">
+                        <span class="langue-nom">${l.langue}</span>
+                        <span class="langue-niveau">${l.niveau}</span>
+                    </div>`).join('')}
+            </div>
+            <div class="section" style="margin-bottom:0">
+                <div class="section-title">Centres d'intérêt</div>
+                <div class="interets-wrap">
+                    ${cv.interets.map(i => `<span class="interet-tag">${i}</span>`).join('')}
+                </div>
+            </div>
+        </div>
+    `;
+}
+
+loadAndRender();
+</script>
+</body>
+</html>

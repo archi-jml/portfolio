@@ -9,7 +9,9 @@
       "Bash(find c:/Users/Jules/Documents/GitHub/portfolio/images -name *.webp)",
       "Bash(find c:/Users/Jules/Documents/GitHub/portfolio/images -name *.png)",
       "Bash(find c:/Users/Jules/Documents/GitHub/portfolio/images -name *.jpg -o -name *.jpeg)",
-      "Bash(node -e \":*)"
+      "Bash(node -e \":*)",
+      "Bash(find /c/Users/Jules/Documents/GitHub/portfolio -type f \\\\\\(-name *.html -o -name *.js -o -name *.json -o -name *.jsx -o -name *.tsx -o -name *.ts -o -name *.yml -o -name *.yaml -o -name *.xml -o -name *.env* -o -name *.config.* \\\\\\))",
+      "Bash(npm install:*)"
     ]
   }
 }
